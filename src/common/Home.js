@@ -22,8 +22,8 @@ const Home = () => {
         <div className='w-full h-full grid grid-cols-2 gap-4 text-xs overflow-x-hidden p-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 sm:text-base'>
             {
                 products && products.map((item, index) => (
-                    <Link to= {`/products/${item.id}`}>
-                    <div className="card flex flex-col justify-between gap-3 rounded-lg p-1 shadow-md hover:shadow-lg bg-slate-900 " key={index}>
+                    <Link to= {`/products/${item.id}`} key = {index}>
+                    <div className="card flex flex-col justify-between gap-3 rounded-lg p-1 shadow-md hover:shadow-lg bg-slate-900 ">
                         <img className='shadow-lg w-full rounded-lg' src={item.image} />
                         <div className='flex gap-4 flex-col '>
                             <p className='text-[0.6rem] sm:text-base'>{item.title}</p>

@@ -61,7 +61,7 @@ const Cart = () => {
                 </table>
             </div>
             <div className=' md:flex justify-center'>
-                <Link to='/' className=' bg-slate-800 p-2 rounded-md text-cyan-500 hover:text-cyan-400 px-3 text-xs md:text-sm ml-9 text-center'>Continue to shopping</Link>
+                <Link to='/' className=' bg-slate-800 p-2 rounded-md text-cyan-500 hover:text-cyan-400 px-3 text-xs md:text-sm ml-9 text-center'>Continue shopping</Link>
             </div>
         </>
     )
