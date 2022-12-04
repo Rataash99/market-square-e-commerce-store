@@ -37,9 +37,9 @@ const Profile = () => {
                 </div>
                 <div className='mx-auto h-[0.05rem] opacity-20 w-[95%] bg-white'></div>
                 <div className='flex flex-col gap-2'>
-                    <Link className='pl-2 focus:text-sky-400 focus:animate-bounce cursor-pointer' onClick={check}>Orders</Link>
+                    <Link className='pl-2 focus:text-sky-400 focus:animate-bounce cursor-pointer hover:scale-105 duration-500 ease-out hover:text-sky-400' onClick={check}>Orders</Link>
                     <div className='mx-auto h-[0.05rem] opacity-20 w-[95%] bg-white'></div>
-                    <Link className='pl-2 focus:text-sky-400 focus:animate-bounce cursor-pointer' onClick={check}>Address</Link>
+                    <Link className='pl-2 focus:text-sky-400 focus:animate-bounce cursor-pointer hover:scale-105 duration-500 ease-out hover:text-sky-400' onClick={check}>Address</Link>
                 </div>
             </section>
             {

@@ -17,7 +17,7 @@ const Signup = () => {
         letters > 0 ? setCheck(true) : setCheck(false);
     }, [letters])
     return (
-        <div className='flex flex-col sm:flex-row rounded-xl justify-center items-center bg-gray-900 m-5 lg:w-[60rem] lg:mx-auto lg:mt-10'>
+        <div className='flex flex-col sm:flex-row rounded-xl justify-center items-center bg-gray-900 m-5 lg:w-[60rem] lg:mx-auto lg:mt-10 mt-12'>
             <div className='flex flex-col text-xs justify-center items-center rounded-xl max-w-sm sm:text-sm sm:mx-auto  p-4 gap-6 lg:w-[80vw]'>
                 <h2 className={!check ? ' text-2xl sm:text-3xl md:text-4xl font-mono animate-bounce text-center':'text-2xl sm:text-3xl md:text-4xl font-mono text-center animate-pulse'}>Create Account</h2>
                 <form className='flex gap-3 flex-col w-[60vw] sm:w-[35vw] lg:w-[90%]' action={submitStatus}>
@@ -34,7 +34,7 @@ const Signup = () => {
                         <input className='bg-slate-700 p-2 rounded-sm w-full' id='password' name='password' type='password' placeholder='At least 6 characters'></input>
                     </label>
                     <label className='mt-10' for='submit-btn'>
-                        <input className='bg-gray-800 p-2 rounded-sm w-full text-yellow-500 hover:text-yellow-400 hover:scale-105 cursor-pointer' id='submit-btn' type='submit'></input>
+                        <input className='bg-gray-800 p-2 rounded-sm w-full text-yellow-500 hover:text-yellow-400 cursor-pointer hover:scale-110 duration-500 ease-out' id='submit-btn' type='submit'></input>
                     </label>
                 </form>
                 <p className='text-center'>Already have an account? <Link to='/login' className='text-sky-500 hover:text-sky-400 cursor-pointer'>Sign in</Link></p>

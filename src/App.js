@@ -23,6 +23,8 @@ function App() {
   let initialObj = {
     cartArr: [],
     loginStatus: false,
+    wishlist: [],
+    cart: []
   }
   const [globalData, setGlobalData] = useState(initialObj)
   return (
