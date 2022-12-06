@@ -8,8 +8,8 @@ const Orders = () => {
     const [length, setLength] = useState(0);
 
     useEffect(() => {
-        setLength(globalData.cartArr.length)
-    }, [globalData.cartArr])
+        setLength(globalData.cart.length)
+    }, [globalData.cart])
     return (
         <section className='rounded-md overflow-scroll sm:mx-auto'>
             <div className=' gap-2 flex flex-col '>
@@ -17,7 +17,7 @@ const Orders = () => {
                     !length > 0 ? <div className='w-full py-32 sm:py-[12.3rem] my-auto'>
                         <h2 className='font-mono tracking-tighter text-cyan-300 text-center sm:text-lg text-base'>You don't have any orders yet <br></br> <Link to='/' className='text-cyan-500 animate-pulse cursor-pointer italic'>Continue Shopping </Link><img className='animate-bounce w-6 inline sm:w-9' src={happy} /></h2>
                     </div>
-                        : globalData.cartArr.map((item, index) => (
+                        : globalData.cart.map((item, index) => (
                             <div className='space-y-5 bg-gray-800 rounded-md p-3'>
                                 <div className='space-y-2'>
                                     <h3>Order status</h3>

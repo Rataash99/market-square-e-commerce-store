@@ -39,7 +39,7 @@ const Settings = () => {
                 </div>
                 <div className='space-y-2 flex justify-between gap-3 items-center'>
                     <div className='flex items-center gap-3'>
-                        <img className='sm:w-9 md:w-10 p-1 w-8 inline bg-slate-500 rounded-md' src = {mail}/>
+                        <img className='sm:w-9 md:w-10 w-8 inline bg-slate-500 rounded-md' src = {mail}/>
                         <div>
                             <h2>Recovery email address</h2>
                             <h5>email</h5>

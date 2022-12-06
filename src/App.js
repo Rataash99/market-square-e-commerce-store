@@ -15,16 +15,17 @@ import Settings from './profile/Settings';
 import AddressDetails from './profile/AddressDetails';
 import Orders from './profile/Orders';
 import AddAddress from './profile/AddAddress';
-
+import Wishlist from './Wishlist';
+import AllProducts from './AllProducts';
 
 export const GlobalContext = createContext();
 
 function App() {
   let initialObj = {
-    cartArr: [],
     loginStatus: false,
     wishlist: [],
-    cart: []
+    cart: [],
+    heartStatus : []
   }
   const [globalData, setGlobalData] = useState(initialObj)
   return (
@@ -42,10 +43,12 @@ function App() {
             <Route path = '/login' element = {<Login />} />
             <Route path = '/signup' element = {<Signup />} />
             <Route path = '/profile' element = {<Profile />} />
-            <Route path = '/settings' element = {<Settings />} />
+            <Route path = '/profile/settings' element = {<Settings />} />
             <Route path = '/addressdetails' element = {<AddressDetails />} />
             <Route path = 'orders' element = {<Orders />} />
             <Route path = 'addadderss' element = {<AddAddress />} />
+            <Route path = '/wishlist' element = {<Wishlist />} />
+            <Route path = '/allproducts' element = {<AllProducts />} />
 
             <Route path='/' element={<Home />} />
             <Route path='/*' element={<NotFound />} />

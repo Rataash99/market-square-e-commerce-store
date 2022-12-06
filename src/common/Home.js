@@ -1,41 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom';
-import heart from '../Images/heart.png';
-import redHeart from '../Images/redheart.png'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
+import ecommerce from '../Images/E-commerce.png';
+import bag from '../Images/bag.png'
 const Home = () => {
-    const [products, setProducts] = useState([]);
-    const [active, setActive] = useState(false);
-
-    const apiCall = async () => {
-        let response = await fetch(`https://fakestoreapi.com/products`);
-        let result = await response.json();
-        console.log(result)
-        setProducts(result);
-    }
-    useEffect(() => {
-        apiCall()
-    }, [])
-    const check = () => {
-        active ? setActive(false) : setActive(true)
-    }
     return (
-        <div className='w-full h-full grid grid-cols-2 gap-6 text-xs overflow-x-hidden p-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 sm:text-base '>
-            {
-                products && products.map((item, index) => (
-                    <Link to= {`/products/${item.id}`} key = {index}>
-                    <div className="card flex flex-col justify-between rounded-lg p-3 shadow-lg shadow-slate-800 hover:shadow-l bg-gradient-to-bl from-black via-slate-900 to-black duration-500 hover:scale-105 ease-out h-[18rem] sm:h-[28rem] lg:h-[32rem] ">
-                        <img className='shadow-lg w-[7rem] self-center sm:w-[12rem] lg:w-[15rem] text-center rounded-lg opacity-70 max-h-96' src={item.image} />
-                        <div className='flex gap-4 flex-col overflow-scroll'>
-                            <p className='text-[0.6rem] sm:text-sm'>{item.title}</p>
-                            <div className='flex justify-between'>
-                                <h3 className='font-medium'>$ {item.price}</h3>
-                                <img className='w-4 hover:bg-clip-text hover: cursor-pointer sm:w-5 my-auto' src={heart} alt='wishlist'/>
-                            </div>
-                        </div>
+
+        <div className=''>
+            <section className = 'p-2 before:content-none before:w-96 before:bg-slate-500 before:h-full before:relative before:z-50'>
+                <div className='flex flex-col md:flex-row'>
+                    <div className='mx-auto max-w-lg'>
+                        <h2 className=' text-3xl text-center pt-10'>Time to start shopping <img className='w-8 inline max-w-md' src={bag} /></h2>
+                        <p className='text-xs py-5 max-w-sm p-4 '>One stop solution for all your shopping needs, now buy your favourite products for most affordable prizes and enjoy heavy discounts on all products.</p>                
+                        <button></button>   
                     </div>
-                    </Link>
-                ))
-            }
+                    <img className='p-4 border max-w-lg animate-bounce duration-1000' src={ecommerce} />
+                </div>
+            </section>
+            <section className='container mx-auto'>
+                this is a container
+            </section>
         </div>
     )
 }

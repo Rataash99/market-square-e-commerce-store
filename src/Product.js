@@ -1,49 +1,54 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { GlobalContext } from './App'
 
 const Product = () => {
     const [product, setProduct] = useState({});
     const { id } = useParams();
     const localContext = useContext(GlobalContext);
-    const [status, setStatus] = useState({
-        wishlist: false,
-        cart: false
-    })
-
+    const [isPresent, setIsPresent] = useState(false);
+    const [cartStatus, setCartStatus] = useState(false)
+    const [wishlistStatus, setWishlistStatus] = useState(false)
     const apiCall = async () => {
         let response = await fetch(`https://fakestoreapi.com/products/${id}`);
         let result = await response.json();
         setProduct(result);
     }
+
     const addToCart = (prod) => {
-        let tempArr = [];
-        localContext.globalData.cartArr.length > 0 ?
-            tempArr = localContext.globalData.cartArr.filter((item) => {
-                return item.id !== prod.id
-            })
-                (
-                    localContext.setGlobalData({
-                        ...localContext.globalData,
-                        cartArr: [...localContext.globalData.cartArr, tempArr]
-                    })
-                )
-            :
-            localContext.setGlobalData({
-                ...localContext.globalData,
-                cartArr: [...localContext.globalData.cartArr, prod]
-            })
+        let isPresent = false;
+        localContext.globalData.cart.map((item) => {
+            if (item.id == prod.id) {
+                isPresent = true;
+                setCartStatus(true)
+            }
+        })
+        !isPresent && localContext.setGlobalData({
+            ...localContext.globalData,
+            cart: [...localContext.globalData.cart, prod]
+        })
     }
 
     const addToWishlsit = (prod) => {
-        localContext.setGlobalData({
+        let isPresent = false;
+        localContext.globalData.wishlist.map((item) => {
+            if(item.id == prod.id){
+                isPresent = true;
+                setWishlistStatus(true);
+            }
+        })
+        !isPresent && localContext.setGlobalData({
             ...localContext.globalData,
             wishlist: [...localContext.globalData.wishlist, prod]
         })
+        setWishlistStatus(true)
     }
+
     useEffect(() => {
-        console.log(localContext.globalData.cartArr)
+        console.log('cart', localContext.globalData.cart)
+        console.log('wishlist', localContext.globalData.wishlist)
     }, [localContext])
+
     useEffect(() => {
         apiCall();
     }, [])
@@ -64,8 +69,16 @@ const Product = () => {
                     <div>{product.rating && product.rating.count} People have purchased this Product</div>
                 </div>
                 <div className='flex gap-3 flex-wrap'>
-                    <button className='text-xs bg-slate-800 p-2 text-cyan-500 hover:text-cyan-400 rounded-lg sm:text-sm lg:text-base'><span className='hover:animate-pulse px-3 md:px-5' onClick={() => addToCart(product)}>Add to Cart</span></button>
-                    <button className='text-xs bg-slate-800 p-2 text-cyan-500 hover:text-cyan-400 rounded-md px-3 md:px-5 sm:text-sm lg:text-base'> <span className='hover:animate-pulse' onClick={() => addToWishlsit(product)}>Add to wishlist</span></button>
+                    {!cartStatus ?
+                        <button className='text-xs bg-slate-800 p-2 text-cyan-500 hover:text-cyan-400 rounded-lg sm:text-sm lg:text-base'><span className='hover:animate-pulse px-3 md:px-5' onClick={() => addToCart(product)}>Add to Cart</span></button>
+                        :
+                        <Link to = '/cart' className='text-xs bg-slate-800 p-2 text-cyan-500 hover:text-cyan-400 rounded-lg sm:text-sm lg:text-base'><span className='hover:animate-pulse px-3 md:px-5' >Move to Cart</span></Link>
+                    }
+                    { !wishlistStatus ? 
+                        <button className='text-xs bg-slate-800 p-2 text-cyan-500 hover:text-cyan-400 rounded-md px-3 md:px-5 sm:text-sm lg:text-base'> <span className='hover:animate-pulse' onClick={() => addToWishlsit(product)}>Add to wishlist</span></button>
+                        :
+                        <Link to = '/wishlist' className='text-xs bg-slate-800 p-2 text-cyan-500 hover:text-cyan-400 rounded-md px-3 md:px-5 sm:text-sm lg:text-base'> <span className='hover:animate-pulse'>Move to wishlist</span></Link>
+                    }
                 </div>
             </div>
         </div>

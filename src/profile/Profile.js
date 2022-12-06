@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import profilepic from '../Images/profile.png';
-import Avatar from 'react-avatar-edit';
 import { GlobalContext } from '../App';
 import Orders from './Orders';
 import AddressDetails from './AddressDetails';
@@ -32,7 +31,7 @@ const Profile = () => {
                     <img src={profilepic} className='w-12 ' />
                     <div>
                         <h2 className='text-base font-bold tracking-widest sm:text-lg'>Guest</h2>
-                        <Link to = '/settings' className='text-sky-500 hover:text-sky-400 cursor-pointer'>Settings</Link>
+                        <Link to = '/profile/settings' className='text-sky-500 hover:text-sky-400 cursor-pointer'>Settings</Link>
                     </div>
                 </div>
                 <div className='mx-auto h-[0.05rem] opacity-20 w-[95%] bg-white'></div>
@@ -45,7 +44,7 @@ const Profile = () => {
             {
                 !status.ordersbar && !status.addressbar ?
                     <div className='my-auto sm:mx-auto'>
-                        <h2 className='font-mono tracking-tighter text-cyan-300 text-center sm:text-lg text-base'>How has it been so far? <img className='w-6 inline sm:w-9 animate-bounce' src={happy} /></h2>
+                        <h2 className='font-mono tracking-tighter text-cyan-300 text-center sm:text-lg text-base'>How has it been so far? <img className='w-6 inline sm:w-9 animate-bounce ' src={happy} /></h2>
                     </div>
                     :
                     status.ordersbar ?
