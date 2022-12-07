@@ -44,7 +44,7 @@ const Profile = () => {
             {
                 !status.ordersbar && !status.addressbar ?
                     <div className='my-auto sm:mx-auto'>
-                        <h2 className='font-mono tracking-tighter text-cyan-300 text-center sm:text-lg text-base'>How has it been so far? <img className='w-6 inline sm:w-9 animate-bounce ' src={happy} /></h2>
+                        <h2 className='font-mono tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 text-center sm:text-lg text-base'>How has it been so far? <img className='w-6 inline sm:w-9 animate-bounce md:w-11 lg:w-12' src={happy} /></h2>
                     </div>
                     :
                     status.ordersbar ?

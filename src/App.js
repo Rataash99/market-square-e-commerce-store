@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './common/Header';
 import Home from './common/Home';
@@ -17,6 +17,7 @@ import Orders from './profile/Orders';
 import AddAddress from './profile/AddAddress';
 import Wishlist from './Wishlist';
 import AllProducts from './AllProducts';
+import About from './common/About';
 
 export const GlobalContext = createContext();
 
@@ -25,11 +26,13 @@ function App() {
     loginStatus: false,
     wishlist: [],
     cart: [],
-    heartStatus : []
+    heartStatus : [],
+    notfound: false
   }
   const [globalData, setGlobalData] = useState(initialObj)
+  
   return (
-    <div className="text-white w-full h-[100vh] bg-gradient-to-tr from-black via-slate-900 to-black overflow-y-scroll">
+    <div className="relative text-white w-full min-h-[100vh] bg-gradient-to-tr from-black via-slate-900 to-black overflow-y-scroll">
       <BrowserRouter>
         <GlobalContext.Provider value={{ globalData, setGlobalData }}>
 
@@ -49,11 +52,12 @@ function App() {
             <Route path = 'addadderss' element = {<AddAddress />} />
             <Route path = '/wishlist' element = {<Wishlist />} />
             <Route path = '/allproducts' element = {<AllProducts />} />
+            <Route path = '/about' element = {<About />} />
 
             <Route path='/' element={<Home />} />
             <Route path='/*' element={<NotFound />} />
           </Routes>
-          {/* <Footer /> */}
+         { !globalData.notfound && <Footer />}
         </GlobalContext.Provider>
 
       </BrowserRouter>

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import bag from '../Images/bag.png'
-import cart from '../Images/logo.png'
+import cart from '../Images/cart.png'
 import { Link } from 'react-router-dom';
 import { GlobalContext } from '../App';
 import profilepic from '../Images/profile.png'
@@ -20,19 +20,19 @@ const Header = () => {
             <Link to='/'>
                 <img className='w-9 my-auto sm:w-12' src={bag} title = 'Market Square' />
             </Link>
-            <div className='hidden py-2 sm:static sm:bg-none bg-gradient-to-tr from-black via-gray-900 to-black text-xs sm:flex flex-wrap absolute top-10 gap-2 md:gap-5 justify-center text-cyan-500 w-full left-0 lg:text-sm duration-700 ease-in-out'>
+            <div className='hidden py-2 sm:static sm:bg-none text-xs sm:flex flex-wrap absolute top-10 gap-2 md:gap-5 justify-center text-cyan-500 w-full left-0 lg:text-sm duration-700 ease-in-out'>
 
-                <Link className=' cursor-pointer  hover:scale-110 duration-200  font-semibold tracking-widest  focus:animate-bounce focus:underline focus:underline-offset-8 ease-out hover:text-cyan-400 px-1 lg:px-2' to='/allproducts'>All</Link>
-                <Link className=' cursor-pointer  hover:scale-110 duration-200  font-semibold tracking-widest  focus:animate-bounce focus:underline focus:underline-offset-8 ease-out hover:text-cyan-400 px-1 lg:px-2' to='category/jewelery'>Jewellery</Link>
-                <Link className=' cursor-pointer  hover:scale-110 duration-200  font-semibold tracking-widest  focus:animate-bounce focus:underline focus:underline-offset-8 ease-out hover:text-cyan-400 px-1 lg:px-2' to="category/men's clothing">Men's Clothing</Link>
-                <Link className='cursor-pointer hover:scale-110 duration-200  font-semibold tracking-widest  focus:animate-bounce focus:underline focus:underline-offset-8 ease-out hover:text-cyan-400 px-1 lg:px-2' to="category/women's clothing">Women's Clothing</Link>
-                <Link className=' cursor-pointer  hover:scale-110 duration-200  font-semibold tracking-widest  focus:animate-bounce focus:underline focus:underline-offset-8 ease-out hover:text-cyan-400 px-1 lg:px-2' to="category/electronics">Electronics</Link>
+                <Link className=' cursor-pointer hover:scale-110 duration-200  font-semibold tracking-widest focus:animate-bounce focus:underline focus:underline-offset-8 ease-out text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400 hover:text-sky-500 px-1 lg:px-2' to='/allproducts'>All</Link>
+                <Link className=' cursor-pointer  hover:scale-110 duration-200  font-semibold tracking-widest  focus:animate-bounce focus:underline focus:underline-offset-8 ease-out text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400 hover:text-sky-500 px-1 lg:px-2' to='category/jewelery'>Jewellery</Link>
+                <Link className=' cursor-pointer  hover:scale-110 duration-200  font-semibold tracking-widest  focus:animate-bounce focus:underline focus:underline-offset-8 ease-out text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400 hover:text-sky-500 px-1 lg:px-2' to="category/men's clothing">Men's Clothing</Link>
+                <Link className='cursor-pointer hover:scale-110 duration-200  font-semibold tracking-widest  focus:animate-bounce focus:underline focus:underline-offset-8 ease-out text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400 hover:text-sky-500 px-1 lg:px-2' to="category/women's clothing">Women's Clothing</Link>
+                <Link className=' cursor-pointer  hover:scale-110 duration-200  font-semibold tracking-widest  focus:animate-bounce focus:underline focus:underline-offset-8 ease-out text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400 hover:text-sky-500 px-1 lg:px-2' to="category/electronics">Electronics</Link>
             </div>
             <div className='sm:flex gap-2 items-center hidden'>
                 <Link to='/login'><img className='w-12 hover:scale-125 duration-500 ease-out' src = {login} /></Link>
                 {/* {!globalData && } */}
                 <Link to='/cart'><img className='w-12 hover:scale-125 duration-500 ease-out' src={cart} /></Link>
-                <Link to='/profile'><img className='w-12 hover:scale-125 duration-500 ease-out' src={profilepic} alt='profilepic' /></Link>
+                <Link to='/profile'><img className='w-10 hover:scale-125 duration-500 ease-out' src={profilepic} alt='profilepic' /></Link>
             </div>
 
             <div className='sm:hidden'>
@@ -46,7 +46,7 @@ const Header = () => {
                                 {/* {!globalData && } */}
                                 <Link className='px-3 text-lg' to='/login'><img className='w-9 hover:scale-125 duration-500 ease-out' src = {login} onClick={check}/></Link>
                             </div>
-                            <img className='w-[2.8rem] hover:scale-110 duration-500 ease-out cursor-pointer' src={close} onClick = {check}/>
+                            <img className='w-[2.8rem] hover:scale-110 duration-500 ease-out cursor-pointer animate-wiggle' src={close} onClick = {check}/>
                         </section>
                         <hr className='mb-8 mt-4 opacity-20'></hr>
                         <section className='lower-nav flex flex-col gap-12 font-sans '>
