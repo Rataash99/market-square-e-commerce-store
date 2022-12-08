@@ -3,7 +3,7 @@ import { GlobalContext } from './App';
 
 const Checkout = () => {
     return(
-        <div className='container'>
+        <div className='container h-[90vh]'>
             <div>
                 
             </div>

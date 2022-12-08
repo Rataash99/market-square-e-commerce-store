@@ -24,8 +24,8 @@ const Cart = () => {
     }, [globalData.cart])
 
     return (
-        <>
-            <div className=' m-10 text-xs shadow-2xl overflow-auto justify-center items-center md:flex lg:text-base'>
+        <div className='h-[90vh] overflow-scroll'>
+            <div className=' m-10 text-xs shadow-2xl overflow-auto justify-center items-center md:flex lg:text-base '>
                 <table className="w-5/6 text-left rounded-sm overflow-hidden">
                     <thead className=''>
                         <tr className=''>
@@ -63,7 +63,7 @@ const Cart = () => {
             <div className=' md:flex justify-center '>
                 <Link to='/allproducts' className=' bg-slate-800 p-2 rounded-md text-cyan-500 hover:text-cyan-400 px-3 text-xs ml-9 text-center hover:scale-110 duration-500 ease-out md:text-base'>Continue shopping</Link>
             </div>
-        </>
+        </div>
     )
 }
 

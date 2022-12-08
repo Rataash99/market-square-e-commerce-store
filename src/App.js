@@ -57,6 +57,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/*' element={<NotFound />} />
           </Routes>
+          { !globalData.notfound && <hr className='mt-12 border border-sky-800 opacity-60'></hr>}
          { !globalData.notfound && <Footer />}
         </GlobalContext.Provider>
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Wishlist = () => {
   return (
-    <div>Wishlist</div>
+    <div className='h-[90vh]'>Wishlist</div>
   )
 }
 

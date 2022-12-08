@@ -16,7 +16,7 @@ const Home = () => {
                     <div className='mx-auto max-w-lg self-center space-y-8 flex flex-col'>
                         <h2 className='duration-300 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-indigo-500 text-4xl text-center pt-10 sm:text-5xl md:text-6xl lg:text-7xl uppercase tracking-widest font-semibold '>Online <span className='pt-1 text-slate-600 text-xl block tracking-[1rem] sm:tracking-[1.3rem] font-extrabold sm:text-2xl md:text-3xl lg:text-5xl text-center pl-2'>shopping</span></h2>
                         <p className='text-xs py-5 max-w-sm lg:max-w-lg p-4 rounded-md sm:text-sm bg-slate-900 text-gray-400 italic'>One stop solution for all your shopping needs, now buy your favourite products for most affordable prizes and enjoy heavy discounts on all products.</p>                
-                        <Link to = '/about' className='bg-slate-800 p-2 lg:p-3 rounded-sm hover:scale-110 duration-500 ease-out inline text-blue-400 sm:text-sm md:text-base text-center lg:text-lg font-semibold tracking-[0.5rem] hover:bg-slate-900 hover:shadow-md hover:shadow-cyan-800 uppercase '>Learn More</Link>   
+                        <Link to = '/about' className='bg-slate-800 p-2 lg:p-3 rounded-sm hover:scale-110 duration-500 ease-out inline text-blue-400 hover:text-sky-400 sm:text-sm md:text-base text-center lg:text-lg font-semibold tracking-[0.5rem] hover:bg-slate-900 hover:shadow-md hover:shadow-cyan-800 uppercase '>Learn More</Link>   
                     </div>
                     <img className=' p-4 max-w-sm sm:max-w-sm duration-200 lg:max-w-lg xl:max-w-xl 2xl:max-w-[52rem] animate-levitate w-[90vw] mx-auto' src={ecommerce} />
                 </div>
