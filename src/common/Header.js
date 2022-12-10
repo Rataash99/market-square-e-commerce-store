@@ -44,17 +44,17 @@ const Header = () => {
                                 <Link to='/profile'><img className='w-9 hover:scale-125 duration-500 ease-out' src={profilepic} alt='profilepic' onClick={check}/></Link>
                                 <Link to='/cart'><img className='w-9 hover:scale-125 duration-500 ease-out' src={cart} onClick={check}/></Link>
                                 {/* {!globalData && } */}
-                                <Link className='px-3 text-lg' to='/login'><img className='w-9 hover:scale-125 duration-500 ease-out' src = {login} onClick={check}/></Link>
+                                <Link className=' text-lg' to='/login'><img className='w-9 hover:scale-125 duration-500 ease-out' src = {login} onClick={check}/></Link>
                             </div>
                             <img className='w-[2.8rem] hover:scale-110 duration-500 ease-out cursor-pointer animate-wiggle' src={close} onClick = {check}/>
                         </section>
                         <hr className='mb-8 mt-4 opacity-20'></hr>
                         <section className='lower-nav flex flex-col gap-12 font-sans '>
-                            <Link className=' cursor-pointer  hover:scale-105 text-md hover:italic  hover:text-sky-500 hover:animate-pulse hover:underline duration-500 uppercase font-bold tracking-widest ease-in-out underline-offset-8' to='/' onClick={check}>All</Link>
-                            <Link className=' cursor-pointer  hover:scale-105 text-md hover:italic  hover:text-sky-500 hover:animate-pulse hover:underline duration-500 uppercase font-bold tracking-widest ease-in-out underline-offset-8' to='category/jewelery' onClick={check}>Jewellery</Link>
-                            <Link className=' cursor-pointer  hover:scale-105 text-md hover:italic  hover:text-sky-500 hover:animate-pulse hover:underline duration-500 uppercase font-bold tracking-widest ease-in-out underline-offset-8' to="category/men's clothing" onClick={check}>Men's Clothing</Link>
-                            <Link className='cursor-pointer hover:scale-105 text-md hover:italic  hover:text-sky-500 hover:animate-pulse hover:underline duration-500 uppercase font-bold tracking-widest ease-in-out underline-offset-8' to="category/women's clothing" onClick={check}>Women's Clothing</Link>
-                            <Link className=' cursor-pointer  hover:scale-105 text-md hover:italic  hover:text-sky-500 hover:animate-pulse hover:underline duration-500 uppercase font-bold tracking-widest ease-in-out underline-offset-8' to="category/electronics" onClick={check}>Electronics</Link>
+                            <Link className=' cursor-pointer  hover:scale-105 text-md hover:italic  hover:text-sky-500 hover:animate-pulse focus:underline duration-500 uppercase font-bold tracking-widest ease-in-out focus:underline-offset-8' to='/allproducts' onClick={check}>All</Link>
+                            <Link className=' cursor-pointer  hover:scale-105 text-md hover:italic  hover:text-sky-500 hover:animate-pulse focus:underline duration-500 uppercase font-bold tracking-widest ease-in-out focus:underline-offset-8' to='category/jewelery' onClick={check}>Jewellery</Link>
+                            <Link className=' cursor-pointer  hover:scale-105 text-md hover:italic  hover:text-sky-500 hover:animate-pulse focus:underline duration-500 uppercase font-bold tracking-widest ease-in-out focus:underline-offset-8' to="category/men's clothing" onClick={check}>Men's Clothing</Link>
+                            <Link className='cursor-pointer hover:scale-105 text-md hover:italic  hover:text-sky-500 hover:animate-pulse focus:underline duration-500 uppercase font-bold tracking-widest ease-in-out focus:underline-offset-8' to="category/women's clothing" onClick={check}>Women's Clothing</Link>
+                            <Link className=' cursor-pointer  hover:scale-105 text-md hover:italic  hover:text-sky-500 hover:animate-pulse focus:underline duration-500 uppercase font-bold tracking-widest ease-in-out focus:underline-offset-8' to="category/electronics" onClick={check}>Electronics</Link>
                         </section>
 
                     </div>}

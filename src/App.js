@@ -26,8 +26,10 @@ function App() {
     loginStatus: false,
     wishlist: [],
     cart: [],
+    username : '',
     heartStatus : [],
-    notfound: false
+    notfound: false,
+    address: [],
   }
   const [globalData, setGlobalData] = useState(initialObj)
   

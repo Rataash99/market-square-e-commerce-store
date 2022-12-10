@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useContext, useState, useEffect } from 'react'
+import { GlobalContext } from './App'
 
 const Wishlist = () => {
+  const {globalData, setGlobalData} = useContext(GlobalContext);
+
   return (
-    <div className='h-[90vh]'>Wishlist</div>
+    <div className='h-[90vh]'>
+      
+    </div>
   )
 }
 

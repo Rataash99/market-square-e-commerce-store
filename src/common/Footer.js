@@ -19,10 +19,10 @@ const Footer = () => {
       <div className='container mx-auto flex flex-col justify-between gap-6 items-center text-center sm:flex-row sm:justify-between'>
         <h3 className='text-slate-400 text-sm md:text-base'>Have any questions? Contact us</h3>
         <div className='flex gap-3 md:gap-4 lg:gap-5 items-center justify-center'>
-          <a href='https://www.linkedin.com/in/rohit-s-03a577137/' target='_blank'><img className='w-6 md:w-7 lg:w-8 rounded-full bg-gray-600 p-1 hover:scale-125 hover:bg-gray-500 cursor-pointer duration-200 ease-in' src={linkedin} /></a>
-          <a href='https://www.showwcase.com/rataash99' target='_blank'><img className='w-6 md:w-7 lg:w-8 rounded-full bg-gray-600 p-1 hover:scale-125 hover:bg-gray-500 cursor-pointer duration-200 ease-in' src={showcase} /></a>
-          <a href='https://github.com/Rataash99' target='_blank'><img className='w-6 md:w-7 lg:w-8 rounded-full bg-gray-600 p-1 hover:scale-125 hover:bg-gray-500 cursor-pointer duration-200 ease-in' src={github} /></a>
-          <a href='https://twitter.com/RohitSingh11299' target='_blank'><img className='w-6 md:w-7 lg:w-8 rounded-full bg-gray-600 p-1 hover:scale-125 hover:bg-gray-500 cursor-pointer duration-200 ease-in' src={twitter} /></a>
+          <a href='https://www.linkedin.com/in/rohit-s-03a577137/' title = 'linkedin' target='_blank'><div><img className='w-6 md:w-7 lg:w-8 rounded-full bg-gray-600 p-1 hover:scale-125 hover:bg-gray-500 cursor-pointer duration-200 ease-in' src={linkedin} /></div></a>
+          <a href='https://www.showwcase.com/rataash99' target='_blank' title = 'showwcase' ><div><img className='w-6 md:w-7 lg:w-8 rounded-full bg-gray-600 p-1 hover:scale-125 hover:bg-gray-500 cursor-pointer duration-200 ease-in' src={showcase} /></div></a>
+          <a href='https://github.com/Rataash99' target='_blank' title = 'github' ><div><img className='w-6 md:w-7 lg:w-8 rounded-full bg-gray-600 p-1 hover:scale-125 hover:bg-gray-500 cursor-pointer duration-200 ease-in' src={github} /></div></a>
+          <a href='https://twitter.com/RohitSingh11299' target='_blank' title = 'twitter' ><div><img className='w-6 md:w-7 lg:w-8 rounded-full bg-gray-600 p-1 hover:scale-125 hover:bg-gray-500 cursor-pointer duration-200 ease-in' src={twitter} /></div></a>
         </div>
       </div>
       <hr className='border border-slate-600 opacity-40 my-6 w-[90vw] mx-auto'></hr>

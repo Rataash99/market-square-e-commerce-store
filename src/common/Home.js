@@ -12,7 +12,7 @@ const Home = () => {
 
         <div className=''>
             <section className = 'p-2 transition-all duration-300 h-[100vh] sm:h-[92vh] md:h-[80vh] xl:h-[92vh] overflow-scroll mt-10 sm:mt-0'>
-                <div className='flex flex-col lg:flex-row duration-300 gap-16 md:gap-2 lg:gap-0'>
+                <div className='flex flex-col lg:flex-row duration-300 gap-16 md:gap-2 lg:gap-0 '>
                     <div className='mx-auto max-w-lg self-center space-y-8 flex flex-col'>
                         <h2 className='duration-300 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-indigo-500 text-4xl text-center pt-10 sm:text-5xl md:text-6xl lg:text-7xl uppercase tracking-widest font-semibold '>Online <span className='pt-1 text-slate-600 text-xl block tracking-[1rem] sm:tracking-[1.3rem] font-extrabold sm:text-2xl md:text-3xl lg:text-5xl text-center pl-2'>shopping</span></h2>
                         <p className='text-xs py-5 max-w-sm lg:max-w-lg p-4 rounded-md sm:text-sm bg-slate-900 text-gray-400 italic'>One stop solution for all your shopping needs, now buy your favourite products for most affordable prizes and enjoy heavy discounts on all products.</p>                
@@ -26,19 +26,19 @@ const Home = () => {
                 <div className='flex flex-col gap-10 items-center md:flex-row'>
                     <Link className='hover:scale-110 duration-300 ease-out flex flex-col items-center bg-slate-900 hover:shadow-md border-l-2 border-cyan-800 hover:shadow-cyan-900 w-[80vw] rounded-md p-2' to = '/category/jewelery'>
                         <img className='w-24 animate-bounce' src = {diamond}/>
-                        <h2 className=' uppercase text-base tracking-widest font-mono font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400'>jewellery</h2>
+                        <h2 className='  text-base tracking-widest font-mono font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400'>Jewellery</h2>
                     </Link>
                     <Link className='hover:scale-110 duration-300 ease-out flex flex-col gap-1 items-center bg-slate-900 hover:shadow-md border-l-2 border-cyan-800 hover:shadow-cyan-900 w-[80vw] rounded-md p-2' to = "/category/men's clothing">
                     <img className='w-24 animate-bounce' src = {suit}/>
-                        <h2 className=' uppercase text-base tracking-widest font-mono font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400'>Men's clothing</h2>
+                        <h2 className=' text-base tracking-widest font-mono font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400'>Men's Clothing</h2>
                     </Link>
                     <Link className='hover:scale-110 duration-300 ease-out flex flex-col gap-1 items-center bg-slate-900 hover:shadow-md border-l-2 border-cyan-800 hover:shadow-cyan-900 w-[80vw] rounded-md p-2 ' to = "/category/men's clothing">
                     <img className='w-24 animate-bounce' src = {wsuit}/>
-                        <h2 className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400 uppercase text-base tracking-widest font-mono font-extrabold text-center'>Women's clothing</h2>
+                        <h2 className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400 text-base tracking-widest font-mono font-extrabold text-center'>Women's Clothing</h2>
                     </Link>
                     <Link className='hover:scale-110 duration-300 ease-out flex flex-col gap-1 items-center bg-slate-900 hover:shadow-md border-l-2 border-cyan-800 hover:shadow-cyan-900 w-[80vw] rounded-md p-2' to = "/category/men's clothing">
                     <img className='w-24 animate-bounce' src = {electronics}/>
-                        <h2 className=' uppercase text-base tracking-widest font-mono font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400'>electronics</h2>
+                        <h2 className=' text-base tracking-widest font-mono font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400'>Electronics</h2>
                     </Link>
                 </div>
             </section>

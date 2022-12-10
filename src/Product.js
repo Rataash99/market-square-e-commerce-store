@@ -44,10 +44,10 @@ const Product = () => {
         setWishlistStatus(true)
     }
 
-    useEffect(() => {
-        console.log('cart', localContext.globalData.cart)
-        console.log('wishlist', localContext.globalData.wishlist)
-    }, [localContext])
+    // useEffect(() => {
+    //     console.log('cart', localContext.globalData.cart)
+    //     console.log('wishlist', localContext.globalData.wishlist)
+    // }, [localContext])
 
     useEffect(() => {
         apiCall();
@@ -59,7 +59,7 @@ const Product = () => {
                 <div className='w-full flex justify-center items-center lg:block'>
                     <img className='shadow-lg rounded-lg w-72 md:w-96 lg:flex lg:justify-center xl:items-center opacity-80' src={product.image} />
                 </div>
-                <div className='flex justify-between flex-col gap-3 bg-slate-900 p-5 rounded-md'>
+                <div className='flex justify-between flex-col gap-3 bg-slate-900 p-5 rounded-md md:max-h-[50vh] lg:max-h-[67vh] xl:max-h-[45vh]'>
                     <div className='flex gap-4 flex-col'>
                         <h2 className='text-xl md:text-2xl lg:text-3xl text-sky-600'>{product.title}</h2>
                         <h4 className='text-sm text-slate-400'>{product.description}</h4>

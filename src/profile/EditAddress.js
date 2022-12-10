@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import { GlobalContext } from '../App'
 import close from '../Images/close.png'
-import location from '../Images/location.png';
+import repair from '../Images/repair.png';
 
-const AddAddress = (prop) => {
+const EditAddress = (prop) => {
     const { globalData, setGlobalData } = useContext(GlobalContext);
-    const { status, setStatus } = prop.status;
+    const { showModal, setShowModal } = prop.showModal;
     const [num, setNum] = useState('')
     const [Address, setAddress] = useState({
         name: '',
@@ -44,7 +44,7 @@ const AddAddress = (prop) => {
             ...globalData,
             address : [...globalData.address, Address]
         })
-        setStatus(false)
+        setShowModal(false)
         console.log('your details have been submitted successfully')
     }
     useEffect(() => {
@@ -59,8 +59,8 @@ const AddAddress = (prop) => {
             <section className='bg-slate-900 flex gap-2 md:gap-3 lg:gap-4 flex-col h-auto rounded-b-2xl pb-10 rounded-md shadow-md shadow-sky-800 p-2'>
                 <div className='flex  justify-between p-2 gap-10'>
                     <div className='hidden sm:block'></div>
-                    <h1 className='text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide font-semibold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-400'>Add new Address</h1>
-                    <img className='w-7 sm:w-8 md:w-9 lg:w-10 animate-wiggle cursor-pointer' src={close} onClick={() => setStatus(false)} />
+                    <h1 className='text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide font-semibold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-400'>Edit Address</h1>
+                    <img className='w-7 sm:w-8 md:w-9 lg:w-10 animate-wiggle cursor-pointer' src={close} onClick={() => setShowModal(false)} />
                 </div>
                 <form className='space-y-3 md:space-y-4 p-2 border-slate-800 border' onSubmit={handleSubmit}>
                     <div className='flex gap-3 lg:gap-4 flex-col sm:flex-row'>
@@ -94,10 +94,10 @@ const AddAddress = (prop) => {
                     </div>
                     <button type='submit' className='w-full p-2 text-sky-500 hover:scale-105 sm:hover:scale-105 hover:shadow-md hover:shadow-sky-800 duration-200 ease-out bg-slate-800 rounded-sm font-semibold text-sm' >Save</button>
                 </form>
-            <img className='w-52 sm:w-56 md:w-60 lg:w-64 xl:w-72 self-center animate-levitate' src = {location} />
+            <img className='w-52 sm:w-56 md:w-60 lg:w-64 xl:w-72 self-center animate-levitate' src = {repair} />
             </section>
         </div>
     )
 }
 
-export default AddAddress
+export default EditAddress

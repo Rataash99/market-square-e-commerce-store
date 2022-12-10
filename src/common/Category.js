@@ -33,20 +33,18 @@ const Category = () => {
     return (
         <div className='container mx-auto p-5 duration-500 tracking-widest transition-all'>
             <h1 className='text-xl sm:text-2xl  uppercase font-bold text-center sm:text-left p-3 text-cyan-600 mt-8 italic animate-pulse'>{name}</h1>
-            <hr className='opacity-40 my-10 mx-auto' ></hr>
-            <div className='w-full h-[75vh] grid grid-cols-2 gap-6 text-xs overflow-scroll sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:text-base  sm:hover:border-y py-7 md:p-7 sm:hover:border-cyan-300 sm:hover:border-opacity-25'>
+            <hr className=' opacity-40 my-10 mx-auto' ></hr>
+            <div className='w-full h-[75vh] grid grid-cols-2 gap-6 text-xs overflow-scroll sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:text-base hover:border-y py-7 md:p-7 hover:border-cyan-300 hover:border-opacity-25'>
             {
                 products && products.map((item, index) => (
                     <Link className=' h-fit'  key = {index} to = {`/products/${item.id}`}>
-                        <div className="card flex flex-col justify-between rounded-lg p-3 shadow-md shadow-cyan-900 hover:shadow-l bg-gradient-to-bl from-black via-slate-900 to-black duration-500 hover:scale-105 ease-out h-[18rem] sm:h-[28rem] lg:h-[32rem] overflow-scroll hover:shadow-lg hover:shadow-cyan-900 ">
-                            <img className='shadow-lg w-[7rem] self-center sm:w-[12rem] lg:w-[15rem] text-center rounded-lg max-h-96 sm:max-h-72 lg:max-h-[23rem] opacity-70' src={item.image} />
+                        <div className="card flex flex-col justify-between rounded-lg p-3 shadow-md shadow-cyan-900 hover:shadow-l bg-gradient-to-bl from-black via-slate-900 to-black duration-500 hover:scale-105 ease-out h-[18rem] sm:h-[26rem] lg:h-[29rem] overflow-scroll hover:shadow-lg hover:shadow-cyan-900 ">
+                            <img className='shadow-lg w-[7rem] self-center sm:w-[12rem] lg:w-[15rem] text-center rounded-lg max-h-96 sm:max-h-72 lg:max-h-[22rem] opacity-70' src={item.image} />
                             <div className='flex gap-4 flex-col'>
-                                <p className='text-[0.6rem] sm:text-base'>{item.title}</p>
+                                <p className='text-[0.6rem] sm:text-[0.7rem] lg:text-[0.8rem] text-sky-400 tracking-tight sm:tracking-normal'>{item.title}</p>
                                 <div className='flex justify-between'>
-                                    <h3 className='font-medium'>$ {item.price}</h3>
-                                    <Link>
+                                    <h3 className='font-medium text-slate-400'>$ {item.price}</h3>
                                         <img className='hover:scale-125 md:w-6 duration-300 ease-in-out hover:animate-pulse w-4  hover: cursor-pointer sm:w-5 my-auto' src={heart} alt='wishlist' onClick={() => addToWishlist(item)} />
-                                    </Link>
                                 </div>
                             </div>
                         </div>
