@@ -30,6 +30,9 @@ function App() {
     heartStatus : [],
     notfound: false,
     address: [],
+    password : '',
+    recoveryPhone : '',
+    recoveryEmail : '',
   }
   const [globalData, setGlobalData] = useState(initialObj)
   

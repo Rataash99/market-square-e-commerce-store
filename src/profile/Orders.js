@@ -31,7 +31,7 @@ const Orders = () => {
                                     <h4 className='text-center sm:whitespace-nowrap text-slate-400'>$ {item.price}</h4>
                                 </div>
                                 <div className='mx-auto h-[0.05rem] opacity-20 w-[98%] bg-white'></div>
-                                <Link to = {`/products/${item.id}`} className='duration-300 hover:scale-y-110 ease-out inline-block lg:text-base p-1 sm:p-2 rounded-md text-sky-500 px-3 text-center text-xs bg-gradient-to-br from-black via-slate-900 to-black '>View order</Link>
+                                <Link to = {`/products/${item.id}`} className='duration-300 hover:scale-110 ease-out inline-block lg:text-base p-1 sm:p-2 rounded-md text-sky-500 px-3 text-center text-xs bg-gradient-to-br from-black via-slate-900 to-black '>View order</Link>
                             </div>
                         ))
                 }

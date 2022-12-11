@@ -6,11 +6,15 @@ import add from '../Images/add.png';
 import { GlobalContext } from '../App';
 import AddAddress from './AddAddress'
 import EditAddress from './EditAddress';
+import Thanks from '../common/Thanks';
+
 
 const AddressDetails = () => {
     const { globalData, setGlobalData } = useContext(GlobalContext);
     const [status, setStatus] = useState(false);
+    const [check, setCheck] = useState(false);
     const [showModal, setShowModal] = useState(false);
+    const checktick = {check, setCheck};
     const statusProp = { status, setStatus };
     const modalProp = {showModal, setShowModal}
 
@@ -27,11 +31,10 @@ const AddressDetails = () => {
         console.log('checking status')
     }, [status])
     return (
-        <div className='flex gap-2 flex-col sm:w-full transition-all duration-300 ease-out'>
-
+        <div className='flex gap-2 flex-col sm:w-full transition-all duration-300 ease-out' >
             {globalData.address.length > 0 &&
-                globalData.address.map((item) => (
-                    <section key = {item.name} className='bg-gray-800 rounded-md p-3 max-h-[20vh] align-middle space-y-4' >
+                globalData.address.map((item, index) => (
+                    <section key = {index} className='bg-gray-800 rounded-md p-3 max-h-[20vh] align-middle space-y-4 ' >
                         <div>
                             <h1 className='font-bold tracking-widest text-base border-b inline rounded-lg pb-1 border-sky-400 lg:text-xl text-neutral-300'>{item.name}</h1>
                         </div>
@@ -51,8 +54,9 @@ const AddressDetails = () => {
                     <h2 className=''>Add delivery Address</h2>
                 </div>
             </section>
+            {check && <Thanks check = {checktick} />}
             {showModal && <EditAddress showModal = {modalProp} />}
-            {status && <AddAddress status={statusProp} />}
+            {status && <AddAddress check = {checktick} status={statusProp} />}
         </div>
     )
 }

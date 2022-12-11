@@ -1,10 +1,18 @@
-import React from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import userimage from '../Images/user.png'
 import lock from '../Images/lock.png'
 import phone from '../Images/phone.png'
 import mail from '../Images/mail.png'
+import ChangePwd from './ChangePwd'
+import { GlobalContext } from '../App'
+import Thanks from '../common/Thanks'
 
 const Settings = () => {
+    const [passCheck, setPassCheck] = useState(false);
+    const pass = {passCheck, setPassCheck}
+    const [check, setCheck] = useState(false);
+    const checktick = {check, setCheck};
+
     return (
         <div className='h-[90vh] transition-all ease-out duration-500'>
             <section className='relative flex flex-col gap-2 items-start z-10 lg:items-center lg:justify-start before:bg-slate-800 before:w-full before:h-[20vh] before:content-[""] before:-z-10 before:absolute before:top-0 before:left-0 p-5'>
@@ -26,7 +34,7 @@ const Settings = () => {
                                 <p className='text-xs sm:text-sm text-slate-400 '>A password keeps your account secure</p>
                             </div>
                         </div>
-                        <button className='text-xs bg-slate-800 p-2 px-3 text-cyan-500 hover:text-cyan-400 rounded-md sm:text-base lg:text-base hover:scale-110 duration-200 ease-out'>change</button>
+                        <button className='text-xs bg-slate-800 p-2 px-3 text-cyan-500 hover:text-cyan-400 rounded-md sm:text-base lg:text-base hover:scale-110 duration-200 ease-out' onClick = {() => setPassCheck(true)}>change</button>
                     </div>
                     <div className='space-y-2 flex justify-between gap-3 items-center'>
                         <div className='flex items-center gap-3'>
@@ -50,6 +58,8 @@ const Settings = () => {
                         <button className='text-xs bg-slate-800 p-2 text-cyan-500 hover:text-cyan-400 rounded-md lg:text-bas px-3 sm:text-base hover:scale-110 duration-200 ease-out'>change</button>
                     </div>
                 </div>
+            {passCheck && <ChangePwd check = {checktick} pass = {pass}/>}
+            {check && <Thanks check = {checktick}/>}
             </section>
         </div>
     )

@@ -45,7 +45,6 @@ const EditAddress = (prop) => {
             address : [...globalData.address, Address]
         })
         setShowModal(false)
-        console.log('your details have been submitted successfully')
     }
     useEffect(() => {
         console.log(Address)
@@ -56,10 +55,10 @@ const EditAddress = (prop) => {
     },[globalData])
     return (
         <div className='absolute w-full h-[100vh] backdrop-blur-sm top-0 left-0 flex items-center justify-center mx-auto'>
-            <section className='bg-slate-900 flex gap-2 md:gap-3 lg:gap-4 flex-col h-auto rounded-b-2xl pb-10 rounded-md shadow-md shadow-sky-800 p-2'>
+            <section className='bg-gradient-to-tr from-black via-slate-900 to-black flex gap-2 md:gap-3 lg:gap-4 flex-col h-auto rounded-b-2xl pb-10 rounded-md shadow-md shadow-sky-800 p-2'>
                 <div className='flex  justify-between p-2 gap-10'>
                     <div className='hidden sm:block'></div>
-                    <h1 className='text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide font-semibold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-400'>Edit Address</h1>
+                    <h1 className='text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide font-semibold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-400 '>Edit Address</h1>
                     <img className='w-7 sm:w-8 md:w-9 lg:w-10 animate-wiggle cursor-pointer' src={close} onClick={() => setShowModal(false)} />
                 </div>
                 <form className='space-y-3 md:space-y-4 p-2 border-slate-800 border' onSubmit={handleSubmit}>
