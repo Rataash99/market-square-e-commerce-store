@@ -11,7 +11,7 @@ const Orders = () => {
         setLength(globalData.cart.length)
     }, [globalData.cart])
     return (
-        <section className='rounded-md overflow-scroll sm:mx-auto'>
+        <section className='rounded-md overflow-scroll sm:mx-auto '>
             <div className=' gap-2 flex flex-col '>
                 {
                     !length > 0 ? <div className='w-full py-32 sm:py-[12.3rem] my-auto'>

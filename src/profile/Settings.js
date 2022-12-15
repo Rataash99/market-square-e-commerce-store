@@ -6,11 +6,17 @@ import mail from '../Images/mail.png'
 import ChangePwd from './ChangePwd'
 import { GlobalContext } from '../App'
 import Thanks from '../common/Thanks'
+import RecoveryPhone from './RecoveryPhone'
+import RecoveryEmail from './RecoveryEmail'
 
 const Settings = () => {
     const [passCheck, setPassCheck] = useState(false);
-    const pass = {passCheck, setPassCheck}
     const [check, setCheck] = useState(false);
+    const [recoveryPh, setRecoveryPh] = useState(false)
+    const [recoveryEm, setRecoveryEm] = useState(false)
+    const recoveryPhone = {recoveryPh, setRecoveryPh}
+    const recoveryEmail = {recoveryEm, setRecoveryEm}
+    const pass = {passCheck, setPassCheck}
     const checktick = {check, setCheck};
 
     return (
@@ -44,7 +50,7 @@ const Settings = () => {
                                 <p className='text-xs sm:text-sm text-slate-400 '>You can sign in, reset your password, or verify your identity with a recovery phone nubmer.</p>
                             </div>
                         </div>
-                        <button className='text-xs bg-slate-800 p-2 text-cyan-500 hover:text-cyan-400 rounded-md lg:text-bas px-3 sm:text-base hover:scale-110 duration-200 ease-out'>change</button>
+                        <button className='text-xs bg-slate-800 p-2 text-cyan-500 hover:text-cyan-400 rounded-md lg:text-bas px-3 sm:text-base hover:scale-110 duration-200 ease-out' onClick = {() => setRecoveryPh(true)}>change</button>
                     </div>
                     <div className='space-y-2 flex justify-between gap-3 items-center'>
                         <div className='flex items-center gap-3'>
@@ -55,10 +61,12 @@ const Settings = () => {
                                 <p className='text-xs sm:text-sm text-slate-400 '>With your recovery email You can sign in to your account, reset your password, or verify your identity.</p>
                             </div>
                         </div>
-                        <button className='text-xs bg-slate-800 p-2 text-cyan-500 hover:text-cyan-400 rounded-md lg:text-bas px-3 sm:text-base hover:scale-110 duration-200 ease-out'>change</button>
+                        <button className='text-xs bg-slate-800 p-2 text-cyan-500 hover:text-cyan-400 rounded-md lg:text-bas px-3 sm:text-base hover:scale-110 duration-200 ease-out' onClick = {() => setRecoveryEm(true)}>change</button>
                     </div>
                 </div>
             {passCheck && <ChangePwd check = {checktick} pass = {pass}/>}
+            {recoveryPh && <RecoveryPhone check = {checktick} recoveryPhone = {recoveryPhone}  />}
+            {recoveryEm && <RecoveryEmail check = {checktick} recoveryEmail = {recoveryEmail}  />}
             {check && <Thanks check = {checktick}/>}
             </section>
         </div>

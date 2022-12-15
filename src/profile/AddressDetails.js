@@ -31,10 +31,12 @@ const AddressDetails = () => {
         console.log('checking status')
     }, [status])
     return (
-        <div className='flex gap-2 flex-col sm:w-full transition-all duration-300 ease-out' >
+        <div className='flex flex-col sm:w-full transition-all duration-300 ease-out' >
+            <div className={globalData.address.length > 0 ?'flex gap-2 flex-col sm:w-full transition-all duration-300 ease-out  overflow-scroll max-h-[50vh] sm:max-h-[100vh] mb-2' : 'flex gap-2 flex-col sm:w-full transition-all duration-300 ease-out  overflow-scroll max-h-[50vh] sm:max-h-[100vh]'}>
+
             {globalData.address.length > 0 &&
                 globalData.address.map((item, index) => (
-                    <section key = {index} className='bg-gray-800 rounded-md p-3 max-h-[20vh] align-middle space-y-4 ' >
+                    <section key = {index} className='bg-gray-800 rounded-md p-3 max-h-[20vh] align-middle space-y-4 hover:shadow-md hover:shadow-sky-800' >
                         <div>
                             <h1 className='font-bold tracking-widest text-base border-b inline rounded-lg pb-1 border-sky-400 lg:text-xl text-neutral-300'>{item.name}</h1>
                         </div>
@@ -48,6 +50,7 @@ const AddressDetails = () => {
                         </div>
                     </section>
                 ))}
+                </div>
             <section className='bg-gray-800 rounded-md p-2 max-h-[20vh] align-middle space-y-3 duration-300 ease-out transition-all' onClick={() => setStatus(true)}>
                 <div className='flex justify-center flex-col items-center py-9 cursor-pointer gap-2 opacity-30 hover:opacity-90 hover:scale-110 duration-200 ease-out hover:text-slate-300 sm:min-h-[12rem] 2xl:min-h-[13rem]'>
                     <img className='w-12' src={add} />

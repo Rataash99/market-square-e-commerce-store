@@ -19,10 +19,6 @@ const ChangePwd = (props) => {
     const passVisibility2 = () => {
         visible2 ? setVisible2(false) : setVisible2(true);
     }
-    // const handleNumChange = (event) => {
-    //     let limit = 16;
-    //     setNum(event.target.value.slice(0, limit));
-    // }
 
     const addDetails = (e) => {
         setNewPswd(e.target.value)
@@ -42,10 +38,9 @@ const ChangePwd = (props) => {
             setCheck(false)
         },5000)
     },[check])
-    
+
     useEffect(() => {
         console.log(globalData)
-
     },[globalData])
 
     return (

@@ -42,10 +42,10 @@ const AllProducts = () => {
                 {
                     products && products.map((item, index) => (
                         <Link to={`/products/${item.id}`} key={index}>
-                            <div className="card flex flex-col justify-between rounded-lg p-3 shadow-md shadow-cyan-900 hover:shadow-l bg-gradient-to-bl from-black via-slate-900 to-black duration-500 hover:scale-105 ease-out h-[18rem] sm:h-[23rem] md:h-[27rem] lg:h-[28rem] xl:h-[29rem] 2xl:h-[32rem]  hover:shadow-lg hover:shadow-cyan-900">
+                            <div className="card flex flex-col justify-between rounded-lg p-3 shadow-md shadow-cyan-900 hover:shadow-l bg-gradient-to-bl from-black via-slate-900 to-black duration-500 hover:scale-105 ease-out h-[17rem] sm:h-[21rem] md:h-[26rem] xl:h-[27rem] 2xl:h-[32rem]  hover:shadow-lg hover:shadow-cyan-900">
                                 <img className='shadow-lg w-[7rem] self-center sm:w-[12rem] lg:w-[15rem] text-center rounded-lg opacity-70 max-h-96' src={item.image} />
                                 <div className='flex gap-4 flex-col overflow-scroll'>
-                                    <p className='text-[0.6rem] text-xs sm:text-[0.7rem] lg:text-[0.8rem] tracking-normal lg:tracking-wide text-sky-400'>{item.title}</p>
+                                    <p className='text-[0.6rem] text-xs sm:text-[0.7rem] lg:text-[0.8rem] tracking-normal lg:tracking-wide text-sky-400 truncate' >{item.title}</p>
                                     <div className='flex justify-between'>
                                         <h3 className='font-medium text-slate-400'>$ {item.price}</h3>
                                             <img className='hover:scale-125 md:w-6 duration-300 ease-in-out hover:animate-pulse w-4  hover: cursor-pointer sm:w-5 my-auto' src={heart} alt='wishlist' onClick={() => addToWishlist(item)} />

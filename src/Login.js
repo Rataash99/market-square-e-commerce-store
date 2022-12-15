@@ -17,8 +17,8 @@ const Login = () => {
         letters > 0 ? setCheck(true) : setCheck(false);
     }, [letters])
     return (
-        <div className='h-[86vh]'>
-            <div className='flex flex-col bg-gray-900 mt-12 text-xs justify-center items-center rounded-xl max-w-sm sm:text-sm md:text-base md:justify-start mx-auto md:mx-[3rem] lg:mx-auto p-4 gap-10'>
+        <div className='h-[86vh] '>
+            <div className='flex max-h-[80vh] flex-col bg-gray-900 mt-12 text-xs justify-center items-center rounded-xl max-w-sm sm:text-sm md:text-base md:justify-start sm:mx-auto md:mx-[3rem] lg:mx-auto p-4 gap-3 mx-3'>
                 <h1 className={!check ? 'text-4xl font-mono animate-bounce text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400' : 'text-4xl font-mono animate-pulse text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400'}>Sign in</h1>
                 <form className='flex gap-3 flex-col w-[90%]' onSubmit = {statusCheck}>
                     <label htmlFor='email' className='space-y-1'> Your Email<br></br>
@@ -36,7 +36,7 @@ const Login = () => {
                     <Link className='bg-gray-800 p-2 rounded-sm text-center text-sky-500 hover:text-sky-400 w-full hover:scale-110 duration-500 ease-out' to='/signup'>Create your account</Link>
                     <img src={about1} className='w-[50vw] -top-[16rem] -right-[23rem] max-w-[20rem] animate-levitate lg:hidden hidden md:block absolute lg:max-w-[40rem]' />
                 </div>
-                <img src={about1} className='w-[50vw] top-[20rem] max-w-[20rem] md:hidden lg:block animate-levitate' />
+                <img src={about1} className='w-[50vw] top-[20rem] max-w-[16rem] md:hidden lg:block animate-levitate' />
             </div>
         </div>
     )
