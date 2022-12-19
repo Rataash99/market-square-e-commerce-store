@@ -18,6 +18,7 @@ import AddAddress from './profile/AddAddress';
 import Wishlist from './Wishlist';
 import AllProducts from './AllProducts';
 import About from './common/About';
+import ProtectedRoute from './ProtectedRoute';
 
 export const GlobalContext = createContext();
 
@@ -26,6 +27,7 @@ function App() {
     loginStatus: false,
     wishlist: [],
     cart: [],
+    email: '',
     username : '',
     heartStatus : [],
     notfound: false,
@@ -33,7 +35,9 @@ function App() {
     password : '',
     recoveryPhone : '',
     recoveryEmail : '',
+    cartTotal : ''
   }
+
   const [globalData, setGlobalData] = useState(initialObj)
   
   return (
@@ -45,17 +49,17 @@ function App() {
           <Routes>
             <Route path='/home' element={<Home />} />
             <Route path='/category/:name' element={<Category />} />
-            <Route path='/cart' element={<Cart />} />
+            <Route path='/cart' element={<ProtectedRoute Component = {Cart} />} />
             <Route path='/products/:id' element={<Product />} />
-            <Route path = '/checkout' element = {<Checkout />} />
+            <Route path = '/checkout' element = {<ProtectedRoute Component = {Checkout} />} />
             <Route path = '/login' element = {<Login />} />
-            <Route path = '/signup' element = {<Signup />} />
-            <Route path = '/profile' element = {<Profile />} />
-            <Route path = '/profile/settings' element = {<Settings />} />
+            {/* <Route path = '/signup' element = {<Signup />} /> */}
+            <Route path = '/profile' element = {<ProtectedRoute Component = {Profile} />} />
+            <Route path = '/profile/settings' element = {<Settings /> } />
             <Route path = '/addressdetails' element = {<AddressDetails />} />
             <Route path = 'orders' element = {<Orders />} />
             <Route path = 'addadderss' element = {<AddAddress />} />
-            <Route path = '/wishlist' element = {<Wishlist />} />
+            <Route path = '/wishlist' element = {<ProtectedRoute Component = {Wishlist} />}  />
             <Route path = '/allproducts' element = {<AllProducts />} />
             <Route path = '/about' element = {<About />} />
 

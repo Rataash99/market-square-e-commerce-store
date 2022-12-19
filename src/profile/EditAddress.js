@@ -31,10 +31,13 @@ const EditAddress = (prop) => {
         })
     }
 
-    const addToGlobal = () => {
+    const removeAddress = (prod) => {
+        let tempArr = globalData.address.filter((item) => {
+            return item.id !== prod.id
+        })
         setGlobalData({
             ...globalData,
-            address : [...globalData.address, Address]
+            address: [...tempArr]
         })
     }
 
@@ -91,7 +94,7 @@ const EditAddress = (prop) => {
                             <input className='bg-transparent border p-2 border-slate-800 w-full' type='text' placeholder='State' name='country' value={Address && Address.country} onChange={(e) => addDetails(e)} required />
                         </label>
                     </div>
-                    <button type='submit' className='w-full p-2 text-sky-500 hover:scale-105 sm:hover:scale-105 hover:shadow-md hover:shadow-sky-800 duration-200 ease-out bg-slate-800 rounded-sm font-semibold text-sm' >Save</button>
+                    <button type='submit' className='w-full p-2 text-sky-500 hover:scale-105 sm:hover:scale-105 hover:shadow-md hover:shadow-sky-800 duration-200 ease-out bg-slate-800 rounded-sm font-semibold text-sm' onClick={removeAddress}>Save</button>
                 </form>
             <img className='w-52 sm:w-56 md:w-60 lg:w-64 xl:w-72 self-center animate-levitate' src = {repair} />
             </section>

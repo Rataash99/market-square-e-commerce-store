@@ -36,9 +36,14 @@ const AllProducts = () => {
 
     return (
         <div className='container mx-auto p-5 duration-500 tracking-widest transition-all '>
-                <h1 className='text-xl sm:text-2xl  uppercase font-bold text-center sm:text-left p-3 text-sky-400 mt-8 italic '>Happy Shopping <img className='inline w-10 sm:w-11 lg:w-16 animate-wiggle' src = {happy}/></h1>
-                <hr className='opacity-40 my-10 mx-auto ' ></hr>
-                <div className='w-full h-[72.8vh] p-7  grid grid-cols-2 gap-6 text-xs overflow-scroll sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:text-base  hover:border-y hover:border-cyan-300 hover:border-opacity-25'>
+            <h1 className='text-xl sm:text-2xl  uppercase font-bold text-center sm:text-left p-3 text-sky-400 mt-8 italic '>Happy Shopping <img className='inline w-10 sm:w-11 lg:w-16 animate-wiggle' src={happy} /></h1>
+            <hr className='opacity-40 my-10 mx-auto ' ></hr>
+
+           { !products.length > 0 ? <div className='w-[100%] h-[73vh] flex justify-center align-middle'>
+            <img className=' mx-auto w-[30rem] sm:w-[40rem] md:w-[45rem] lg:w-[50rem] my-auto' src = 'https://cdn.dribbble.com/users/32512/screenshots/5276094/smile_loader_by_gleb.gif' />
+           </div>
+           :
+            <div className='w-full h-[72.8vh] p-7  grid grid-cols-2 gap-6 text-xs overflow-scroll sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:text-base  hover:border-y hover:border-cyan-300 hover:border-opacity-25'>
                 {
                     products && products.map((item, index) => (
                         <Link to={`/products/${item.id}`} key={index}>
@@ -48,14 +53,16 @@ const AllProducts = () => {
                                     <p className='text-[0.6rem] text-xs sm:text-[0.7rem] lg:text-[0.8rem] tracking-normal lg:tracking-wide text-sky-400 truncate' >{item.title}</p>
                                     <div className='flex justify-between'>
                                         <h3 className='font-medium text-slate-400'>$ {item.price}</h3>
-                                            <img className='hover:scale-125 md:w-6 duration-300 ease-in-out hover:animate-pulse w-4  hover: cursor-pointer sm:w-5 my-auto' src={heart} alt='wishlist' onClick={() => addToWishlist(item)} />
+                                        <Link>
+                                        <img className='hover:scale-125 md:w-6 duration-300 ease-in-out hover:animate-pulse w-4  hover: cursor-pointer sm:w-5 my-auto' src={heart} alt='wishlist' onClick={() => addToWishlist(item)} />
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                         </Link>
                     ))
                 }
-            </div>
+            </div>}
         </div>
     )
 }

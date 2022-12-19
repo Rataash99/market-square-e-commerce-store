@@ -20,7 +20,7 @@ const AddressDetails = () => {
 
     const deleteAddress = (address) => {
         let tempArr = globalData.address.filter((item) => {
-            return item.name != address.name
+            return item.phone != address.phone
         })
         setGlobalData({
             ...globalData,

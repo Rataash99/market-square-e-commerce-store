@@ -21,7 +21,11 @@ const Cart = () => {
         let sum = globalData.cart.reduce((acc, curr) => {
             return acc + curr.price;
         }, 0)
-        setTotal(sum);
+        setGlobalData({
+            ...globalData,
+            cartTotal : sum.toFixed(2)
+        })
+
     }, [globalData.cart])
 
     return (
@@ -55,7 +59,7 @@ const Cart = () => {
                                     <td className='bg-slate-700 p-3 whitespace-nowrap'>Total</td>
                                     <td className='bg-slate-700 p-3 whitespace-nowrap'></td>
                                     <td className='bg-slate-700 p-3 whitespace-nowrap'></td>
-                                    <td className='bg-slate-700 p-3 whitespace-nowrap'>$ {globalData.cart.length > 0 && total.toFixed(2)}</td>
+                                    <td className='bg-slate-700 p-3 whitespace-nowrap'>$ {globalData.cart.length > 0 && globalData.cartTotal}</td>
                                     <td className='bg-slate-700 p-4 text-center whitespace-nowrap '>{globalData.cart.length > 0 && <Link to='/checkout' className='bg-slate-800 p-2 rounded-md text-yellow-500 hover:text-yellow-400 px-2 hover:scale-110 duration-500 ease-out '><span className='hover:animate-pulse '>Checkout</span></Link>}</td>
                                 </tr>
                             }

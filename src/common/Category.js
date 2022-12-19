@@ -5,7 +5,7 @@ import { GlobalContext } from '../App';
 
 const Category = () => {
     const [products, setProducts] = useState([]);
-    const {globalData, setGlobalData} = useContext(GlobalContext)
+    const { globalData, setGlobalData } = useContext(GlobalContext)
     const { name } = useParams();
     const apiCall = async () => {
         let response = await fetch(`https://fakestoreapi.com/products/category/${name}`);
@@ -19,14 +19,14 @@ const Category = () => {
     const addToWishlist = (prod) => {
         let isPresent = false;
         globalData.wishlist.map((item) => {
-            if(item.id == prod.id){
+            if (item.id == prod.id) {
                 isPresent = true;
             }
         })
         !isPresent && setGlobalData({
             ...globalData,
             wishlist: [...globalData.wishlist, prod],
-            heartStatus: [...globalData.heartStatus,prod.id]
+            heartStatus: [...globalData.heartStatus, prod.id]
         })
     }
 
@@ -34,25 +34,30 @@ const Category = () => {
         <div className='container mx-auto p-5 duration-500 tracking-widest transition-all'>
             <h1 className='text-xl sm:text-2xl  uppercase font-bold text-center sm:text-left p-3 text-cyan-600 mt-8 italic animate-pulse'>{name}</h1>
             <hr className=' opacity-40 my-10 mx-auto' ></hr>
-            <div className='w-full h-[75vh] grid grid-cols-2 gap-6 text-xs overflow-scroll sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:text-base hover:border-y py-7 md:p-7 hover:border-cyan-300 hover:border-opacity-25'>
-            {
-                products && products.map((item, index) => (
-                    <Link className=' h-fit'  key = {index} to = {`/products/${item.id}`}>
-                        <div className="card flex flex-col justify-between rounded-lg p-3 shadow-md shadow-cyan-900 hover:shadow-l bg-gradient-to-bl from-black via-slate-900 to-black duration-500 hover:scale-105 ease-out h-[18rem] sm:h-[24rem] lg:h-[27rem] xl:h-[28frem] overflow-scroll hover:shadow-lg hover:shadow-cyan-900 ">
-                            <img className='shadow-lg w-[7rem] self-center sm:w-[12rem] lg:w-[15rem] text-center rounded-lg max-h-96 sm:max-h-72 lg:max-h-[22rem] opacity-70' src={item.image} />
-                            <div className='flex gap-4 flex-col'>
-                                <p className='text-[0.6rem] sm:text-[0.7rem] lg:text-[0.8rem] text-sky-400 tracking-tight sm:tracking-normal truncate'>{item.title}</p>
-                                <div className='flex justify-between'>
-                                    <h3 className='font-medium text-slate-400'>$ {item.price}</h3>
-                                        <img className='hover:scale-125 md:w-6 duration-300 ease-in-out hover:animate-pulse w-4  hover: cursor-pointer sm:w-5 my-auto' src={heart} alt='wishlist' onClick={() => addToWishlist(item)} />
+            {!products.length > 0 ? <div className='w-[100%] h-[73vh] flex justify-center align-middle'>
+                <img className=' mx-auto w-[30rem] sm:w-[40rem] md:w-[45rem] lg:w-[50rem] my-auto' src='https://cdn.dribbble.com/users/32512/screenshots/5276094/smile_loader_by_gleb.gif' />
+            </div>
+                :
+                <div className='w-full h-[75vh] grid grid-cols-2 gap-6 text-xs overflow-scroll sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:text-base hover:border-y py-7 md:p-7 hover:border-cyan-300 hover:border-opacity-25'>
+                    {
+                        products && products.map((item, index) => (
+                            <Link className=' h-fit' key={index} to={`/products/${item.id}`}>
+                                <div className="card flex flex-col justify-between rounded-lg p-3 shadow-md shadow-cyan-900 hover:shadow-l bg-gradient-to-bl from-black via-slate-900 to-black duration-500 hover:scale-105 ease-out h-[18rem] sm:h-[24rem] lg:h-[27rem] xl:h-[28frem] overflow-scroll hover:shadow-lg hover:shadow-cyan-900 ">
+                                    <img className='shadow-lg w-[7rem] self-center sm:w-[12rem] lg:w-[15rem] text-center rounded-lg max-h-96 sm:max-h-72 lg:max-h-[22rem] opacity-70' src={item.image} />
+                                    <div className='flex gap-4 flex-col'>
+                                        <p className='text-[0.6rem] sm:text-[0.7rem] lg:text-[0.8rem] text-sky-400 tracking-tight sm:tracking-normal truncate'>{item.title}</p>
+                                        <div className='flex justify-between'>
+                                            <h3 className='font-medium text-slate-400'>$ {item.price}</h3>
+                                            <img className='hover:scale-125 md:w-6 duration-300 ease-in-out hover:animate-pulse w-4  hover: cursor-pointer sm:w-5 my-auto' src={heart} alt='wishlist' onClick={() => addToWishlist(item)} />
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </Link>
-                ))
+                            </Link>
+                        ))
+                    }
+                </div>
             }
         </div>
-            </div>
     )
 }
 

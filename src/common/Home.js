@@ -10,7 +10,7 @@ import about1 from '../Images/about1.png'
 const Home = () => {
     return (
 
-        <div className='container mx-auto'>
+        <div className=''>
             <section className = ' p-2 transition-all duration-300 h-[100vh] sm:h-[92vh] md:h-[80vh] xl:h-[92vh] overflow-scroll mt-10 sm:mt-0'>
                 <div className='flex flex-col lg:flex-row duration-300 gap-16 md:gap-2 lg:gap-0 '>
                     <div className='mx-auto max-w-lg self-center space-y-8 flex flex-col'>

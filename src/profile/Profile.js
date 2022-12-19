@@ -30,8 +30,8 @@ const Profile = () => {
                 <section className='bg-gray-800 rounded-md p-2 max-h-[20vh] align-middle space-y-3 sm:w-2/5' >
                     <div className='flex gap-4 items-center'>
                         <img src={profilepic} className='w-12 ' />
-                        <div>
-                            <h2 className='text-base font-bold tracking-widest sm:text-lg'>Guest</h2>
+                        <div className='truncate'>
+                            <h2 className='text-base font-bold tracking-widest sm:text-lg whitespace-nowrap'>{globalData.username}</h2>
                             <Link to='/profile/settings' className='text-sky-500 hover:text-sky-400 cursor-pointer'>Settings</Link>
                         </div>
                     </div>
