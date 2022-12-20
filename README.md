@@ -1,4 +1,4 @@
-# Market Square an E-Commerce Web App
+# **Market Square an E-Commerce Web App**
 
 ## This was my first `REACT` project and the journey of building it was awesome, I get to know the overall working of an E-Commerce app and the project was very fun to build, Looking forward to building some amazing projects.
 
