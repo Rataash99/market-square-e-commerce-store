@@ -20,9 +20,10 @@ const Wishlist = () => {
     })
   }
 
-  useEffect(() => {
-    console.log(globalData.wishlist)
-  }, [globalData.Wishlist])
+  // useEffect(() => {
+  //   console.log(globalData.wishlist)
+  // }, [globalData.Wishlist])
+  
   return (
     globalData.wishlist.length > 0 ?
     <div className='container mx-auto sm:h-[90vh] sm:max-w-xl md:max-w-3xl lg:max-w-5xl transition-all duration-200 ease-in max-w-6xl mt-14 p-2 space-y-6'>

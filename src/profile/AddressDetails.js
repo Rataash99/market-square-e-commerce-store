@@ -27,9 +27,10 @@ const AddressDetails = () => {
             address : [...tempArr]
         })
     }
-    useEffect(() => {
-        console.log('checking status')
-    }, [status])
+    // useEffect(() => {
+    //     console.log('checking status')
+    // }, [status])
+    
     return (
         <div className='flex flex-col sm:w-full transition-all duration-300 ease-out' >
             <div className={globalData.address.length > 0 ?'flex gap-2 flex-col sm:w-full transition-all duration-300 ease-out  overflow-scroll max-h-[50vh] sm:max-h-[100vh] mb-2' : 'flex gap-2 flex-col sm:w-full transition-all duration-300 ease-out  overflow-scroll max-h-[50vh] sm:max-h-[100vh]'}>

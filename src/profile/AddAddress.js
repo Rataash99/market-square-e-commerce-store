@@ -39,16 +39,15 @@ const AddAddress = (prop) => {
         })
         e.preventDefault();
         setStatus(false)
-        console.log('your details have been submitted successfully')
     }
     
-    useEffect(() => {
-        console.log(Address)
-    }, [Address])
+    // useEffect(() => {
+    //     console.log(Address)
+    // }, [Address])
 
-    useEffect(() => {
-        console.log(globalData)
-    },[globalData])
+    // useEffect(() => {
+    //     console.log(globalData)
+    // },[globalData])
 
     useEffect(() => {
         setTimeout(() => {

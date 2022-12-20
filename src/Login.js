@@ -51,12 +51,12 @@ const Login = () => {
     useEffect(() => {
         let name = loginDetails.email.split('@')
         setUName(name[0])
-        console.log(loginDetails)
+        // console.log(loginDetails)
     }, [loginDetails])
 
-    useEffect(() => {
-        console.log(globalData)
-    },[globalData])
+    // useEffect(() => {
+    //     console.log(globalData)
+    // },[globalData])
 
     return (
         <div className='h-[86vh] '>

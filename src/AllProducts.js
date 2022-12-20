@@ -8,7 +8,6 @@ import happy from './Images/happy.png'
 const AllProducts = () => {
     const { globalData, setGlobalData } = useContext(GlobalContext);
     const [products, setProducts] = useState([]);
-    const [wish, setWish] = useState([])
 
     const apiCall = async () => {
         let response = await fetch(`https://fakestoreapi.com/products`);
@@ -23,14 +22,15 @@ const AllProducts = () => {
         let tempArr = globalData.wishlist.filter((item) => {
             return item.id !== prod.id
         })
-        let tempArr2 = wish.filter((item) => {
+        let tempArr2 = globalData.heartStatus.filter((item) => {
             return item != prod.id
         })
+
         setGlobalData({
             ...globalData,
-            wishlist: [...tempArr]
+            wishlist: [...tempArr],
+            heartStatus : [...tempArr2]
         })
-        setWish(tempArr2)
     }
 
     const addToWishlist = (prod) => {
@@ -44,17 +44,16 @@ const AllProducts = () => {
             setGlobalData({
                 ...globalData,
                 wishlist: [...globalData.wishlist, prod],
+                heartStatus : [...globalData.heartStatus,prod.id]
             })
-            setWish([...wish,prod.id])
         }
         else if (isPresent === true) {
             removeFromWishlist(prod)
         }
     }
     // useEffect(() => {
-    //     console.log('wishlist', globalData.wishlist)
-    //     console.log('wish', wish);
-    // }, [globalData.wishlist])
+        // console.log(globalData.heartStatus)
+    // },[globalData.heartStatus])
 
     return (
         <div className='container mx-auto p-5 duration-500 tracking-widest transition-all '>
@@ -76,7 +75,7 @@ const AllProducts = () => {
                                         <div className='flex justify-between'>
                                             <h3 className='font-medium text-slate-400'>$ {item.price}</h3>
                                             <Link>
-                                                <img className='hover:scale-150 mr-1 md:w-6 duration-300 ease-in-out hover:animate-pulse w-4  hover: cursor-pointer hover:p-[0.1rem] mb-1 sm:w-5 my-auto' src={wish.includes(item.id) ? redHeart : heart} alt='wishlist' onClick={() => addToWishlist(item)} />
+                                                <img className='hover:scale-150 mr-1 md:w-6 duration-300 ease-in-out hover:animate-pulse w-4  hover: cursor-pointer hover:p-[0.1rem] mb-1 sm:w-5 my-auto' src={globalData.heartStatus.includes(item.id) ? redHeart : heart} alt='wishlist' onClick={() => addToWishlist(item)} />
                                             </Link>
                                         </div>
                                     </div>

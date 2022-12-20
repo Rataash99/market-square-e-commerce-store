@@ -23,7 +23,7 @@ const Product = () => {
                 setCartStatus(true)
             }
         })
-        
+
         !isPresent && localContext.setGlobalData({
             ...localContext.globalData,
             cart: [...localContext.globalData.cart, prod]
@@ -45,9 +45,9 @@ const Product = () => {
         setWishlistStatus(true)
     }
 
-    useEffect(() => {
-        console.log('wishlist', localContext.globalData.wishlist)
-    }, [localContext])
+    // useEffect(() => {
+    //     console.log('wishlist', localContext.globalData.wishlist)
+    // }, [localContext])
 
     useEffect(() => {
         apiCall();

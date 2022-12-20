@@ -41,9 +41,9 @@ const ChangePwd = (props) => {
         }, 5000)
     }, [check])
 
-    useEffect(() => {
-        console.log(globalData)
-    }, [globalData])
+    // useEffect(() => {
+    //     console.log(globalData)
+    // }, [globalData])
 
     const prevPassCheck = (e) => {
         let pass = globalData.password;

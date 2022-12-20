@@ -23,9 +23,10 @@ const RecoveryPhone = (props) => {
         })
         setRecoveryPh(false)
     }
-    useEffect(() => {
-        console.log(globalData)
-    },[globalData]);
+    // useEffect(() => {
+    //     console.log(globalData)
+    // },[globalData]);
+    
   return (
     <div className='z-10 absolute w-full h-[90vh] backdrop-blur-sm top-0 left-0 flex items-center justify-center mx-auto'>
     <section className='bg-gradient-to-tr from-black via-slate-900 to-black flex gap-2 md:gap-3 lg:gap-4 flex-col h-auto pb-10 rounded-md shadow-md shadow-sky-800 p-2 w-[80vw] sm:max-w-lg'>

@@ -22,9 +22,9 @@ const RecoveryEmail = (props) => {
         })
         setRecoveryEm(false)
     }
-    useEffect(() => {
-        console.log(globalData)
-    },[globalData]);
+    // useEffect(() => {
+    //     console.log(globalData)
+    // },[globalData]);
 
   return (
     <div className='z-10 absolute w-full h-[90vh] backdrop-blur-sm top-0 left-0 flex items-center justify-center mx-auto'>

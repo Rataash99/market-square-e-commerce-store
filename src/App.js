@@ -72,6 +72,7 @@ function App() {
         </GlobalContext.Provider>
 
       </BrowserRouter>
+      
     </div>
   );
 }
