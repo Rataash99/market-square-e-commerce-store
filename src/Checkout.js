@@ -22,10 +22,10 @@ const Checkout = () => {
     }
    
     return (
-        <div className='container mx-auto sm:h-[90vh] sm:max-w-xl md:max-w-3xl lg:max-w-5xl transition-all duration-200 ease-in max-w-6xl mt-14 p-2 space-y-6'>
+        <div className='container mx-auto h-[84vh] overflow-scroll sm:h-[90vh] sm:max-w-xl md:max-w-3xl lg:max-w-5xl transition-all duration-200 ease-in max-w-6xl mt-14 p-2 space-y-6'>
             <h2 className='text-lg text-sky-500 text-center sm:text-xl md:text-2xl tracking-wider font-semibold'><span className=' p-2 border-double border-b-4 rounded-lg border-sky-500 px-4'>Checkout</span></h2>
             <hr className='border border-sky-800 opacity-60'></hr>
-            <div className='flex gap-2 flex-col sm:w-full transition-all duration-300 ease-out  overflow-scroll max-h-[80vh] sm:max-h-[100vh]  m-1 pb-2 sm:m-0'>
+            <div className='flex gap-2 flex-col sm:w-full transition-all duration-300 ease-out  overflow-scroll max-h-[50vh] md:max-h-[80vh] sm:max-h-[100vh]  m-1 pb-2 sm:m-0'>
                 {
                     globalData.cart.map((item, index) => (
                         <Link to = {`/products/${item.id}`} key={index} className='bg-gray-900 rounded-md p-3 align-middle space-y-4 hover:shadow-sky-900 hover:shadow-md' >

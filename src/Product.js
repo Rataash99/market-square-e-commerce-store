@@ -20,7 +20,7 @@ const Product = () => {
         localContext.globalData.cart.map((item) => {
             if (item.id == prod.id) {
                 isPresent = true;
-                setCartStatus(true)
+                setCartStatus(true);
             }
         })
 
@@ -28,6 +28,7 @@ const Product = () => {
             ...localContext.globalData,
             cart: [...localContext.globalData.cart, prod]
         })
+        setCartStatus(true)
     }
 
     const addToWishlsit = (prod) => {
