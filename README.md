@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Market Square an E-Commerce Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This was my first `REACT` project and the journey of building it was awesome, I get to know the overall working of an E-Commerce app and the project was very fun to build, Looking forward to building some amazing projects.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The challenge
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- Login/Logout 
+- Add any product to cart or in wishlist.
+- Remove any product from cart or from wishlist.
+- user will be able to checkout with desired products.
+- Filter products by category.
+- Click on a product to see overview.
+- Add/Edit delivery Address.
+- View his/her profile.
+- Change password.
+- Add recovery Email and Password.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Links
 
-### `npm run build`
+- Solution URL: [Github link](https://github.com/Rataash99/market-square-e-commerce-store)
+- Live Site URL: [hosted here](https://market-square.netlify.app/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Built with
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React.js
+- Tailwind CSS
+- JavaScript
+- [Styled Components](https://fontawesome.com) - For Styles
+- [logo and other Images](https://icons8.com/) - For Icons
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### What I learned?
 
-### `npm run eject`
+- JS concepts
+- Overall React application
+- I get to know the overall working of an E-Commerce app
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Useful resources
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Resource 1](https://www.fontawesome.com) - This helped me for choosing icons. I really liked this pattern and will use it going forward.
+- [Resource 2](https://fonts.google.com) - This is an amazing website which helped me select whatever the font i've needed.
+- [Resource 3](https://icons8.com) - This is an amazing website which helped me in getting images and logos.
