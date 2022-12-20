@@ -8,6 +8,7 @@ import ham from '../Images/ham.png'
 import close from '../Images/close.png'
 import login from '../Images/login.png'
 import logout from '../Images/logout.png'
+import wishlist from '..//Images/wishlist.png'
 
 const Header = () => {
     const { globalData, setGlobalData } = useContext(GlobalContext)
@@ -21,7 +22,7 @@ const Header = () => {
             ...globalData,
             loginStatus: false,
         })
-         status && setStatus(false)
+        status && setStatus(false)
     }
     return (
 
@@ -39,13 +40,16 @@ const Header = () => {
             </div>
             <div className='sm:flex gap-2 items-center hidden'>
 
-                {!globalData.loginStatus && <Link title='login' to='/login'><img className='w-12 hover:scale-125 duration-500 ease-out' src={login} /></Link>}
-                {globalData.loginStatus && <Link to='/' title='logout'><img className='w-12 hover:scale-125 duration-500 ease-out' src={logout} onClick={() => handleLogout()} /></Link>}
 
                 {globalData.loginStatus &&
-                    <Link to='/cart'><img className='w-12 hover:scale-125 duration-500 ease-out' title='cart' src={cart} /></Link>}
-                {globalData.loginStatus &&
-                    <Link to='/profile'><img className='w-10 hover:scale-125 duration-500 ease-out' src={profilepic} alt='profilepic' title='profile' /></Link>}
+                    <>
+                        <Link to='/cart'><img className='w-12 hover:scale-125 duration-500 ease-out' title='cart' src={cart} /></Link>
+                        <Link to='/wishlist'><img className='w-10 hover:scale-125 duration-500 ease-out' src={wishlist} alt='profilepic' title='wishlist' onClick={check} /></Link>
+                        <Link to='/profile'><img className='w-10 hover:scale-125 duration-500 ease-out' src={profilepic} alt='profilepic' title='profile' /></Link>
+                    </>
+                }
+                {!globalData.loginStatus && <Link title='login' to='/login'><img className='w-12 hover:scale-125 duration-500 ease-out' src={login} /></Link>}
+                {globalData.loginStatus && <Link to='/' title='logout'><img className='w-12 hover:scale-125 duration-500 ease-out' src={logout} onClick={() => handleLogout()} /></Link>}
             </div>
 
             <div className='sm:hidden'>
@@ -54,13 +58,16 @@ const Header = () => {
                     status && <div className='w-full absolute z-50 right-0 backdrop-blur-lg hover:fixed h-[100vh] top-0 p-5'>
                         <section className='upper-nav gap-2 items-center flex py-5 justify-between '>
                             <div className='flex items-center gap-5'>
-                                {!globalData.loginStatus && <Link title='login' to='/login'><img className='w-12 hover:scale-125 duration-500 ease-out' src={login} onClick = {check}/></Link>}
-                                {globalData.loginStatus && <Link to='/' title='logout'><img className='w-12 hover:scale-125 duration-500 ease-out' src={logout} onClick={() => handleLogout()}/></Link>}
+                                {!globalData.loginStatus && <Link title='login' to='/login'><img className='w-12 hover:scale-125 duration-500 ease-out' src={login} onClick={check} /></Link>}
+                                {globalData.loginStatus && <Link to='/' title='logout'><img className='w-12 hover:scale-125 duration-500 ease-out' src={logout} onClick={() => handleLogout()} /></Link>}
 
                                 {globalData.loginStatus &&
-                                    <Link to='/cart'><img className='w-12 hover:scale-125 duration-500 ease-out' title='cart' src={cart} onClick = {check}/></Link>}
+                                    <Link to='/cart'><img className='w-12 hover:scale-125 duration-500 ease-out' title='cart' src={cart} onClick={check} /></Link>}
                                 {globalData.loginStatus &&
-                                    <Link to='/profile'><img className='w-10 hover:scale-125 duration-500 ease-out' src={profilepic} alt='profilepic' title='profile' onClick = {check}/></Link>}
+                                    <>
+                                        <Link to='/profile'><img className='w-10 hover:scale-125 duration-500 ease-out' src={profilepic} alt='profilepic' title='profile' onClick={check} /></Link>
+                                        <Link to='/wishlist'><img className='w-10 hover:scale-125 duration-500 ease-out' src={wishlist} alt='profilepic' title='wishlist' onClick={check} /></Link>
+                                    </>}
                             </div>
                             <img className='w-[2.8rem] hover:scale-110 duration-500 ease-out cursor-pointer animate-wiggle' src={close} onClick={check} />
                         </section>
@@ -72,7 +79,6 @@ const Header = () => {
                             <Link className='cursor-pointer hover:scale-105 text-md hover:italic  hover:text-sky-500 hover:animate-pulse focus:underline duration-500 uppercase font-bold tracking-widest ease-in-out focus:underline-offset-8' to="category/women's clothing" onClick={check}>Women's Clothing</Link>
                             <Link className=' cursor-pointer  hover:scale-105 text-md hover:italic  hover:text-sky-500 hover:animate-pulse focus:underline duration-500 uppercase font-bold tracking-widest ease-in-out focus:underline-offset-8' to="category/electronics" onClick={check}>Electronics</Link>
                         </section>
-
                     </div>
                 }
             </div>

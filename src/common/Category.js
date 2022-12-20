@@ -2,19 +2,37 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom';
 import heart from '../Images/heart.png'
 import { GlobalContext } from '../App';
+import redHeart from '../Images/redheart.png'
 
 const Category = () => {
     const [products, setProducts] = useState([]);
     const { globalData, setGlobalData } = useContext(GlobalContext)
+    const [wish, setWish] = useState([])
     const { name } = useParams();
+
     const apiCall = async () => {
         let response = await fetch(`https://fakestoreapi.com/products/category/${name}`);
         let result = await response.json();
         setProducts(result);
     }
+
     useEffect(() => {
         apiCall()
     }, [name])
+
+    const removeFromWishlist = (prod) => {
+        let tempArr = globalData.wishlist.filter((item) => {
+            return item.id !== prod.id
+        })
+        let tempArr2 = wish.filter((item) => {
+            return item != prod.id
+        })
+        setGlobalData({
+            ...globalData,
+            wishlist: [...tempArr]
+        })
+        setWish(tempArr2)
+    }
 
     const addToWishlist = (prod) => {
         let isPresent = false;
@@ -23,12 +41,22 @@ const Category = () => {
                 isPresent = true;
             }
         })
-        !isPresent && setGlobalData({
-            ...globalData,
-            wishlist: [...globalData.wishlist, prod],
-            heartStatus: [...globalData.heartStatus, prod.id]
-        })
+        if (isPresent === false) {
+            setGlobalData({
+                ...globalData,
+                wishlist: [...globalData.wishlist, prod],
+            })
+            setWish([...wish, prod.id])
+        }
+        else if (isPresent === true) {
+            removeFromWishlist(prod)
+        }
     }
+
+    useEffect(() => {
+        console.log('wishlist', globalData.wishlist)
+        console.log('wish', wish);
+    }, [globalData.wishlist])
 
     return (
         <div className='container mx-auto p-5 duration-500 tracking-widest transition-all'>
@@ -48,7 +76,9 @@ const Category = () => {
                                         <p className='text-[0.6rem] sm:text-[0.7rem] lg:text-[0.8rem] text-sky-400 tracking-tight sm:tracking-normal truncate'>{item.title}</p>
                                         <div className='flex justify-between'>
                                             <h3 className='font-medium text-slate-400'>$ {item.price}</h3>
-                                            <img className='hover:scale-125 md:w-6 duration-300 ease-in-out hover:animate-pulse w-4  hover: cursor-pointer sm:w-5 my-auto' src={heart} alt='wishlist' onClick={() => addToWishlist(item)} />
+                                            <Link>
+                                            <img className='hover:scale-150 mr-1 md:w-6 duration-300 ease-in-out hover:animate-pulse w-4  hover: cursor-pointer hover:p-[0.1rem] mb-1 sm:w-5 my-auto' src={wish.includes(item.id) ? redHeart : heart} alt='wishlist' onClick={() => addToWishlist(item)} />
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

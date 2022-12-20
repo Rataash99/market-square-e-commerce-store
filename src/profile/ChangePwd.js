@@ -65,7 +65,7 @@ const ChangePwd = (props) => {
                             <img className='w-4 absolute top-3 my-auto right-2 cursor-pointer animate-pulse' src={visible2 ? eyeslash : eye} onClick={() => passVisibility2()} />
                         </label>
                         <label className='relative'>
-                            <input minLength='8' className='rounded-sm bg-transparent border p-2 border-slate-800 w-full' value={newPswd} type={visible ? 'text' : 'password'} placeholder='New Password' name='pincode' required onChange={(e) => addDetails(e)} />
+                            <input minLength='8' className='rounded-sm bg-transparent border p-2 border-slate-800 w-full' value={newPswd} type={visible ? 'text' : 'password'} placeholder='New Password' name='pincode' required onChange={(e) => addDetails(e)}/>
                             <img className='w-4 absolute top-3 my-auto right-2 cursor-pointer animate-pulse' src={visible ? eyeslash : eye} onClick={() => passVisibility()} />
                         </label>
                     </div>

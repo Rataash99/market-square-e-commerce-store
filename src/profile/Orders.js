@@ -18,8 +18,8 @@ const Orders = () => {
                         <h2 className='font-mono tracking-tighter text-center sm:text-lg text-base text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400'>You don't have any orders yet <br></br> <Link to='/allproducts' className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-400 animate-pulse cursor-pointer italic'>Continue Shopping </Link><img className='animate-bounce w-6 inline sm:w-9 ' src={happy} /></h2>
                     </div>
                         : globalData.cart.map((item, index) => (
-                            <div className='space-y-5 bg-gray-800 rounded-md p-3'>
-                                <div className='space-y-2'>
+                            <div key = {index} className='space-y-5 bg-gray-800 rounded-md p-3'>
+                                <div className='space-y-1'>
                                     <h3 className='text-slate-300'>Order status</h3>
                                     <h2 className='text-slate-300'>Order Date</h2>
                                 </div>

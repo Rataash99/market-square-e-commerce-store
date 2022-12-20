@@ -76,6 +76,7 @@ const Cart = () => {
                     <img className='w-16 sm:w-20 md:w-24' src = {orders} />
                     <h2 className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-indigo-500 text-sm text-center sm:text-base lg:text-lg xl:text-xl'>You don't have any orders yet.</h2>
                     <Link to = '/allproducts' className='p-2 bg-slate-800 text-sky-500 rounded-md text-xs sm:text-sm  hover:scale-110 hover:shadow-md hover:shadow-sky-700 duration-200 ease-out'><span className='animate-pulse hover:animate-none'>Go shopping</span></Link>
+                    <Link to = '/wishlist' className='p-2 bg-slate-800 text-sky-500 rounded-md text-xs sm:text-sm  hover:scale-110 hover:shadow-md hover:shadow-sky-700 duration-200 ease-out'><span className='animate-pulse hover:animate-none'>Go to Wishlist</span></Link>
                 </div>
             </div>
     )

@@ -26,10 +26,11 @@ function App() {
   let initialObj = {
     loginStatus: false,
     wishlist: [],
+    heartStatus : [],
     cart: [],
+    orders : [],
     email: '',
     username : '',
-    heartStatus : [],
     notfound: false,
     address: [],
     password : '',
