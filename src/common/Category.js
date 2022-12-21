@@ -70,7 +70,7 @@ const Category = () => {
                     {
                         products && products.map((item, index) => (
                             <Link className=' h-fit' key={index} to={`/products/${item.id}`}>
-                                <div className="card flex flex-col justify-between rounded-lg p-3 shadow-md shadow-cyan-900 hover:shadow-l bg-gradient-to-bl from-black via-slate-900 to-black duration-500 hover:scale-105 ease-out h-[18rem] sm:h-[24rem] lg:h-[27rem] xl:h-[28frem] overflow-scroll hover:shadow-lg hover:shadow-cyan-900 ">
+                                <div className="card flex flex-col justify-between rounded-lg p-3 shadow-md shadow-cyan-900 hover:shadow-l bg-gradient-to-bl from-black via-slate-900 to-black duration-500 hover:scale-105 ease-out h-[18rem] sm:h-[24rem] lg:h-[27rem] xl:h-[28rem] overflow-scroll hover:shadow-lg hover:shadow-cyan-900 ">
                                     <img className='shadow-lg w-[7rem] self-center sm:w-[12rem] lg:w-[15rem] text-center rounded-lg max-h-96 sm:max-h-72 lg:max-h-[22rem] opacity-70' src={item.image} />
                                     <div className='flex gap-4 flex-col'>
                                         <p className='text-[0.6rem] sm:text-[0.7rem] lg:text-[0.8rem] text-sky-400 tracking-tight sm:tracking-normal truncate'>{item.title}</p>
