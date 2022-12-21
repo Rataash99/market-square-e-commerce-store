@@ -56,7 +56,11 @@ const Product = () => {
 
     return (
         <div className='h-[88vh] overflow-scroll'>
-            <div className="m-3 card grid grid-row-2 p-2 sm:p-3 lg:p-6 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:space-x-7 xl:space-x-0 transition-all duration-700 ease-in-out max-h-[60vh]" >
+            {Object.keys(product).length == 0 ? <div className='w-[100%] h-[73vh] flex justify-center align-middle'>
+                <img className=' mx-auto w-[30rem] sm:w-[40rem] md:w-[45rem] lg:w-[50rem] my-auto' src='https://cdn.dribbble.com/users/32512/screenshots/5276094/smile_loader_by_gleb.gif' />
+            </div>
+            :
+                <div className="m-3 card grid grid-row-2 p-2 sm:p-3 lg:p-6 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:space-x-7 xl:space-x-0 transition-all duration-700 ease-in-out max-h-[60vh]" >
                 <div className='w-full flex justify-center items-center lg:block'>
                     <img className='shadow-lg rounded-lg w-72 md:w-96 lg:flex lg:justify-center xl:items-center opacity-80' src={product.image} />
                 </div>
@@ -83,7 +87,7 @@ const Product = () => {
                         }
                     </div>
                 </div>
-            </div>
+            </div>}
         </div>
     )
 }

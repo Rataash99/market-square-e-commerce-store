@@ -23,60 +23,58 @@ const Cart = () => {
         }, 0)
         setGlobalData({
             ...globalData,
-            cartTotal : sum.toFixed(2)
+            cartTotal: sum.toFixed(2)
         })
 
     }, [globalData.cart])
 
     return (
         globalData.cart.length > 0 ?
-            <div className='h-[90vh] overflow-scroll'>
-                <div className=' m-10 text-xs shadow-2xl overflow-auto justify-center items-center md:flex lg:text-base '>
-                    <table className="w-5/6 text-left rounded-sm overflow-hidden">
-                        <thead className=''>
-                            <tr className=''>
-                                <th className='bg-slate-900 p-3 text-center'>S.No</th>
-                                <th className='bg-slate-900 p-3'></th>
-                                <th className='bg-slate-900 p-3'>Title</th>
-                                <th className='bg-slate-900 p-3'>Price</th>
-                                <th className='bg-slate-900 p-3'>{/*remove btn */}</th>
-                            </tr>
-                        </thead>
-                        <tbody className=''>
+            <div className='h-[90vh]'>
+                <div className=' text-xs shadow-2xl justify-center items-center md:flex lg:text-base '>
+
+                    <div className='container mx-auto h-[90vh] sm:h-[90vh] sm:max-w-xl md:max-w-3xl lg:max-w-5xl transition-all duration-200 ease-in max-w-6xl mt-8 p-2 space-y-6'>
+                        <h2 className='text-lg text-sky-500 text-center sm:text-xl md:text-2xl tracking-wider font-semibold'><span className=' p-2 border-double border-b-4 rounded-lg border-sky-500 px-4'>Shopping Cart</span></h2>
+                        <hr className='border border-sky-800 opacity-60'></hr>
+                        <div className='flex gap-2 flex-col sm:w-full transition-all duration-300 ease-out overflow-scroll max-h-[60vh] m-1 pb-2 sm:m-0'>
                             {
                                 globalData.cart.map((item, index) => (
-                                    <tr className='border-b hover:border-t-2 border-slate-900 hover:scale-[1.02] duration-300 ease-in-out hover:shadow-lg hover:shadow-sky-900' key={index}>
-                                        <td className='bg-slate-800 p-3 text-center w-1 whitespace-nowrap '>{index + 1}</td>
-                                        <td className='bg-slate-800 p-3 whitespace-nowrap  '><img className='w-12' src={item.image} /></td>
-                                        <td className='bg-slate-800 p-3 md:overflow-scroll whitespace-nowrap '>{item.title}</td>
-                                        <td className='bg-slate-800 p-3 whitespace-nowrap '>$ {item.price}</td>
-                                        <td className='bg-slate-800 p-3 whitespace-nowrap text-center '><button className='p-2 px-4 bg-slate-900 text-red-600 hover:text-red-500 rounded-md hover:scale-110 duration-200 ease-out' onClick={() => removeFromCart(item)}>remove</button></td>
-                                    </tr>
+                                    <Link to = {`/products/${item.id}`} key={index} className='bg-gray-900 rounded-md p-3 align-middle space-y-4 sm:space-y-5 md:space-y-6 duration-200 ease-in hover:shadow-md cursor-pointer  hover:shadow-sky-900 ' >
+                                            <h1 className='font-semibold text-xs border-b inline rounded-lg pb-2 border-sky-400 text-neutral-300 md:text-sm lg:text-base'>{item.title}</h1>
+                                        <div className='relative space-y-2 text-gray-300 flex justify-between'>
+                                            <div className='flex w-full items-center'>
+                                                <img className='w-16 sm:w-20 md:w-24 rounded-md' src={item.image} />
+                                                <p className='text-xs md:text-sm px-2 truncate max-w-[8rem] self-center left-24 text-slate-300 absolute sm:max-w-xs md:max-w-md lg:max-w-2xl xl:max-w-3xl xl:text-clip xl:whitespace-normal xl:overflow-visible  sm:left-28 text-gray-400'>{item.description}</p>
+                                            </div>
+                                            <p className='text-center self-center text-xs sm:text-sm lg:text-base whitespace-nowrap'>$ {item.price}</p>
+                                        </div>
+                                        <div className='flex gap-2'>
+                                            <Link className='bg-gradient-to-br from-black via-slate-900 to-black text-red-700 hover:scale-110 duration-100 ease-in p-2 px-4 rounded-md hover:shadow-sm hover:shadow-sky-900 text-center' onClick={() => removeFromCart(item)}>Remove</Link>
+                                        </div>
+                                    </Link>
                                 ))
                             }
-                            {
-                                <tr className=''>
-                                    <td className='bg-slate-700 p-3 whitespace-nowrap'>Total</td>
-                                    <td className='bg-slate-700 p-3 whitespace-nowrap'></td>
-                                    <td className='bg-slate-700 p-3 whitespace-nowrap'></td>
-                                    <td className='bg-slate-700 p-3 whitespace-nowrap'>$ {globalData.cart.length > 0 && globalData.cartTotal}</td>
-                                    <td className='bg-slate-700 p-4 text-center whitespace-nowrap '>{globalData.cart.length > 0 && <Link to='/checkout' className='bg-slate-800 p-2 rounded-md text-yellow-500 hover:text-yellow-400 px-2 hover:scale-110 duration-500 ease-out '><span className='hover:animate-pulse '>Checkout</span></Link>}</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+                        </div>
+                        <hr className='border border-sky-800 opacity-60'></hr>
+                        <div className='flex justify-between pr-2 pl-3'>
+                            <h2 className='font-semibold tracking-wide uppercase'>Total</h2>
+                            <p className='font-semibold'>$ {globalData.cartTotal}</p>
+                        </div>
+                        <hr className='border border-sky-800 opacity-60'></hr>
+                        <div className=' flex justify-center '>
+                            <Link to='/allproducts' className='bg-slate-800 p-2 rounded-md text-sky-500 hover:bg-slate-900 hover:shadow-md hover:shadow-sky-800 px-3 text-xs sm:text-sm md:text-base text-center hover:scale-110 duration-200 ease-out w-[80vw] max-w-[18rem] sm:max-w-[20rem]'>Continue shopping</Link>
+                        </div>
+                    </div>
                 </div>
-                <div className=' md:flex justify-center '>
-                    <Link to='/allproducts' className=' bg-slate-800 p-2 rounded-md text-cyan-500 hover:text-cyan-400 px-3 text-xs ml-9 text-center hover:scale-110 duration-[2000] ease-out md:text-base'>Continue shopping</Link>
-                </div>
+
             </div>
             :
             <div className='h-[90vh] flex items-start justify-center mt-14 p-5 transition-all duration-500 ease-in'>
                 <div className='rounded-md bg-slate-900 flex justify-center items-center flex-col h-[30vh] md:h-[40vh] lg:h-[50vh] gap-4 w-full max-w-md md:max-w-lg lg:max-w-4xl'>
-                    <img className='w-16 sm:w-20 md:w-24' src = {orders} />
+                    <img className='w-16 sm:w-20 md:w-24' src={orders} />
                     <h2 className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-indigo-500 text-sm text-center sm:text-base lg:text-lg xl:text-xl'>You don't have any orders yet.</h2>
-                    <Link to = '/allproducts' className='p-2 bg-slate-800 text-sky-500 rounded-md text-xs sm:text-sm  hover:scale-110 hover:shadow-md hover:shadow-sky-700 duration-200 ease-out'><span className='animate-pulse hover:animate-none'>Go shopping</span></Link>
-                    <Link to = '/wishlist' className='p-2 bg-slate-800 text-sky-500 rounded-md text-xs sm:text-sm  hover:scale-110 hover:shadow-md hover:shadow-sky-700 duration-200 ease-out'><span className='animate-pulse hover:animate-none'>Go to Wishlist</span></Link>
+                    <Link to='/allproducts' className='p-2 bg-slate-800 text-sky-500 rounded-md text-xs sm:text-sm  hover:scale-110 hover:shadow-md hover:shadow-sky-700 duration-200 ease-out'><span className='animate-pulse hover:animate-none'>Go shopping</span></Link>
+                    <Link to='/wishlist' className='p-2 bg-slate-800 text-sky-500 rounded-md text-xs sm:text-sm  hover:scale-110 hover:shadow-md hover:shadow-sky-700 duration-200 ease-out'><span className='animate-pulse hover:animate-none'>Go to Wishlist</span></Link>
                 </div>
             </div>
     )

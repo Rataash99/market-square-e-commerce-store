@@ -56,8 +56,8 @@ const AddAddress = (prop) => {
     },[check])
 
     return (
-        <div className='absolute mt-10 w-full h-[100vh] backdrop-blur-sm top-0 left-0 flex items-center justify-center mx-auto'>
-            <section className='bg-gradient-to-tr from-black via-slate-900 to-black flex gap-2 md:gap-3 lg:gap-4 flex-col h-auto rounded-b-2xl pb-10 rounded-md shadow-md shadow-sky-800 p-2'>
+        <div className=' absolute mt-10 w-full h-[100vh] backdrop-blur-sm top-0 left-0 flex items-center justify-center mx-auto'>
+            <section className='bg-gradient-to-tr from-black via-slate-900 to-black flex gap-2 md:gap-3 lg:gap-4 w-[85vw] max-w-[25rem] sm:max-w-none sm:w-auto flex-col h-auto rounded-b-2xl pb-10 rounded-md shadow-md shadow-sky-800 p-2'>
                 <div className='flex  justify-between p-2 gap-10'>
                     <div className='hidden sm:block'></div>
                     <h1 className='text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide font-semibold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-400'>Add new Address</h1>

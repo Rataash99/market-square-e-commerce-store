@@ -14,16 +14,21 @@ const Wishlist = () => {
     let tempArr = globalData.wishlist.filter((item) => {
       return item.id !== prod.id
     })
-    setGlobalData({
+    let tempArr2 = globalData.heartStatus.filter((item) => {
+      return item != prod.id
+  })
+
+  setGlobalData({
       ...globalData,
-      wishlist: [...tempArr]
-    })
+      wishlist: [...tempArr],
+      heartStatus : [...tempArr2]
+  })
   }
 
   // useEffect(() => {
   //   console.log(globalData.wishlist)
   // }, [globalData.Wishlist])
-  
+
   return (
     globalData.wishlist.length > 0 ?
     <div className='container mx-auto sm:h-[90vh] sm:max-w-xl md:max-w-3xl lg:max-w-5xl transition-all duration-200 ease-in max-w-6xl mt-14 p-2 space-y-6'>
@@ -39,7 +44,7 @@ const Wishlist = () => {
               <div className='relative space-y-2 text-gray-300 flex justify-between'>
                 <img className='w-24 rounded-md' src={item.image} />
                 <p className='text-xs md:text-sm px-2 truncate max-w-[8rem] self-center left-24 text-slate-300 absolute sm:max-w-xs md:max-w-lg lg:max-w-2xl  sm:left-28 text-justify'>{item.description}</p>
-                <p to={`/products/${item.id}`} className='text-center self-center text-xs sm:text-sm lg:text-base '>$ {item.price}</p>
+                <p className='text-center self-center text-xs sm:text-sm lg:text-base '>$ {item.price}</p>
               </div>
               <div className='flex gap-2'>
                 <Link to={`/products/${item.id}`} className='bg-gradient-to-br from-black via-slate-900 to-black text-sky-500 hover:scale-110 duration-100 ease-in px-4 p-2 rounded-md hover:shadow-sm hover:shadow-sky-900 text-center'>Buy</Link>
