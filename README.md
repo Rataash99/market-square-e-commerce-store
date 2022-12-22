@@ -21,6 +21,7 @@ Users should be able to:
 - Add any product to cart or in wishlist.
 - Remove any product from cart or from wishlist.
 - user will be able to checkout with desired products.
+- Will only be able to see Profile page, Wishlist, Cart only if he/she has logged in.
 - Filter products by category.
 - Click on a product to see overview.
 - Add/Edit delivery Address.
