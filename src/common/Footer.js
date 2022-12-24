@@ -35,7 +35,7 @@ const Footer = () => {
           <p className='text-xs cursor-pointer lg:text-sm hover:text-slate-300 duration-200 ease-in-out'>Terms of Sales</p>
           <p className='md:hidden text-xs text-slate-500 text-center'>Copyright Ⓒ 2022 Market Square. All rights reserved.</p>
         </div>
-        <button onClick={scrollUp} className='text-base sm:text-lg md:text-xl lg:text-3xl align-middle text-sky-600 bg-slate-900 px-[1.2rem] py-2 font-extrabold rounded-full hover:shadow-sm hover:scale-110 duration-200 ease-in hover:bg-sky-700 hover:text-black'><span className='align-middle'>^</span></button>
+        {/* <button onClick={scrollUp} className='text-base sm:text-lg md:text-xl lg:text-3xl align-middle text-sky-600 bg-slate-900 px-[1.2rem] py-2 font-extrabold rounded-full hover:shadow-sm hover:scale-110 duration-200 ease-in hover:bg-sky-700 hover:text-black'><span className='align-middle'>^</span></button> */}
       </div>
       <p className='hidden md:block mt-5 text-xs lg:text-sm text-slate-500 text-center '>Copyright Ⓒ 2022 Market Square. All rights reserved.</p>
     </div>
