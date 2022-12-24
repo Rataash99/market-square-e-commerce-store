@@ -6,7 +6,6 @@ const Product = () => {
     const [product, setProduct] = useState({});
     const { id } = useParams();
     const localContext = useContext(GlobalContext);
-    const [isPresent, setIsPresent] = useState(false);
     const [cartStatus, setCartStatus] = useState(false)
     const [wishlistStatus, setWishlistStatus] = useState(false)
     const apiCall = async () => {
@@ -41,7 +40,9 @@ const Product = () => {
         })
         !isPresent && localContext.setGlobalData({
             ...localContext.globalData,
-            wishlist: [...localContext.globalData.wishlist, prod]
+            wishlist: [...localContext.globalData.wishlist, prod],
+            heartStatus : [...localContext.globalData.heartStatus,prod.id]
+
         })
         setWishlistStatus(true)
     }
