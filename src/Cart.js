@@ -39,8 +39,8 @@ const Cart = () => {
                         <div className='flex gap-2 flex-col sm:w-full transition-all duration-300 ease-out overflow-scroll max-h-[60vh] m-1 pb-2 sm:m-0'>
                             {
                                 globalData.cart.map((item, index) => (
-                                    <Link to = {`/products/${item.id}`} key={index} className='bg-gray-900 rounded-md p-3 align-middle space-y-4 sm:space-y-5 md:space-y-6 duration-200 ease-in hover:shadow-md cursor-pointer  hover:shadow-sky-900 ' >
-                                            <h1 className='font-semibold text-xs border-b inline rounded-lg pb-2 border-sky-400 text-neutral-300 md:text-sm lg:text-base'>{item.title}</h1>
+                                    <Link to={`/products/${item.id}`} key={index} className='bg-gray-900 rounded-md p-3 align-middle space-y-4 sm:space-y-5 md:space-y-6 duration-200 ease-in hover:shadow-md cursor-pointer  hover:shadow-sky-900 ' >
+                                        <h1 className='font-semibold text-xs border-b inline rounded-lg pb-2 border-sky-400 text-neutral-300 md:text-sm lg:text-base'>{item.title}</h1>
                                         <div className='relative space-y-2 text-gray-300 flex justify-between'>
                                             <div className='flex w-full items-center'>
                                                 <img className='w-16 sm:w-20 md:w-24 rounded-md' src={item.image} />
@@ -61,7 +61,8 @@ const Cart = () => {
                             <p className='font-semibold'>$ {globalData.cartTotal}</p>
                         </div>
                         <hr className='border border-sky-800 opacity-60'></hr>
-                        <div className=' flex justify-center '>
+                        <div className=' flex justify-center flex-col items-center gap-2'>
+                            <Link to='/checkout' className='bg-slate-800 p-2 rounded-md text-sky-500 hover:bg-slate-900 hover:shadow-md hover:shadow-sky-800 px-3 text-xs sm:text-sm md:text-base text-center hover:scale-110 duration-200 ease-out w-[80vw] max-w-[18rem] sm:max-w-[20rem]'>Checkout</Link>
                             <Link to='/allproducts' className='bg-slate-800 p-2 rounded-md text-sky-500 hover:bg-slate-900 hover:shadow-md hover:shadow-sky-800 px-3 text-xs sm:text-sm md:text-base text-center hover:scale-110 duration-200 ease-out w-[80vw] max-w-[18rem] sm:max-w-[20rem]'>Continue shopping</Link>
                         </div>
                     </div>
