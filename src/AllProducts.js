@@ -9,15 +9,6 @@ const AllProducts = () => {
     const { globalData, setGlobalData } = useContext(GlobalContext);
     const [products, setProducts] = useState([]);
 
-    class compclass extends React.Component{
-        constructor(){
-
-        }
-        render(){
-            
-        }
-    }
-
     const apiCall = async () => {
         let response = await fetch(`https://fakestoreapi.com/products`);
         let result = await response.json();
